@@ -2,26 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+/* html {
+  font-size: 10px;
+} */
+html {
+    font-size: 16px;
+    @screen md {
+      font-size: 20px;
+    }
+    @screen lg {
+      font-size: 26px;
+    }
+  }
+
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-rgb: 243, 235, 220;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 243, 235, 220;
+    --background-rgb: 0, 0, 0;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #DAD6C8;
+}
+
+.jungle {
+    background:
+      url(/jungle-l.png) center left no-repeat;
+    background-size: auto 100%;
+
+    @screen md {
+        background:
+          url(/jungle-l.png) center left no-repeat,
+          url(/jungle-r.png) center right no-repeat;
+        background-size: auto 100%, auto 100%;
+        font-size: 17px;
+    }
 }
