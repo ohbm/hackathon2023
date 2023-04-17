@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html {
-  font-size: 10px;
-} */
 html {
     font-size: 16px;
     @screen md {
@@ -22,14 +19,14 @@ html {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 243, 235, 220;
-    --background-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255;
+    --background-rgb: 51, 47, 34;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #DAD6C8;
+  background-color: rgb(var(--background-rgb));
 }
 
 .jungle {

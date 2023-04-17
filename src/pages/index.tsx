@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import { Bebas_Neue } from 'next/font/google'
-import { GoogleMap, useLoadScript } from '@react-google-maps/api';
-import { useMemo } from 'react';
+import LocalFont from 'next/font/local'
+import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import { useMemo } from 'react'
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 
@@ -38,7 +39,7 @@ export default function Home() {
               OHBM Brainhack <span className="block text-9xl">2023</span>
             </h2>
             <p
-              className={`${bebas.className} m-0 text-3xl bg-sand p-2`}
+              className={`${bebas.className} m-0 text-3xl bg-sand dark:bg-sand-dark p-2`}
             >
               July 19-21, 2023 <br />
               Montreal, CA.
@@ -46,7 +47,7 @@ export default function Home() {
           </div>
           <div className="relative flex px-8 md:px-0 items-end">
             <Image
-              className="object-contain dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert md:max-h-3/4 lg:max-h-3/4 xl:max-h-3/4 !relative"
+              className="object-contain md:max-h-3/4 lg:max-h-3/4 xl:max-h-3/4 !relative"
               src="/golden-brain.png"
               alt="The Golden Brain"
               priority
