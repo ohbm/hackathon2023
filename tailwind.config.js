@@ -1,7 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 const plugin = require('tailwindcss/plugin')
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  mode: 'jit',
+  purge: [
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -9,23 +15,57 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: { // defined in _app.tsx
+        primary: ['var(--roboto-font)', ...fontFamily.sans],
+        display: ['var(--bebas-font)', ...fontFamily.serif],
+        theme: ['var(--nycd-font)', ...fontFamily.serif],
+      },
+      minHeight: {
+        '1/2': '50vh',
+        '3/4': '75vh',
+        '3/5': '60vh',
+      },
       maxHeight: {
         '1/2': '50%',
         '1/4': '25%',
         '3/4': '75%',
         '1/2v': '50vh',
       },
+      spacing: {
+        '34': '8.5rem',
+        '58': '15.5rem',
+        '92': '22rem',
+      },
       colors: {
         'sand': '#F3EBDC',
         'sand-light': '#F9F4E9',
         'sand-dark': '#261D0D',
+        'dirt': '#242423',
+        'gold': '#B79B5E',
+        'jungle': '#192423',
         'almost-black': '#091517',
       },
       backgroundImage: {
+        'deep-sea': "linear-gradient(0deg, var(--tw-gradient-stops)), url(/deep-sea.jpg)",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      backgroundPosition: {
+        'top-3px': 'center top, center top 3px',
+      },
+      gridRow: {
+        'span-7': 'span 7 / span 7',
+        'span-8': 'span 8 / span 8',
+        'span-9': 'span 9 / span 9',
+        'span-10': 'span 10 / span 10',
+        'span-11': 'span 11 / span 11',
+        'span-12': 'span 12 / span 12',
+        'span-13': 'span 13 / span 13',
+        'span-14': 'span 14 / span 14',
+        'span-15': 'span 15 / span 15',
+        'span-16': 'span 16 / span 16',
+      }
     },
   },
   corePlugins: {

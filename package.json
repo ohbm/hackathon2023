@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 9009",
     "build": "next build",
-    "start": "next start",
+    "export": "next export",
+    "start": "next start -p 9009",
     "lint": "next lint"
   },
   "dependencies": {
@@ -20,6 +21,8 @@
     "postcss": "8.4.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
+    "sass": "^1.62.1",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4"
   },

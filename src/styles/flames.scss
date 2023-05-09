@@ -1,0 +1,56 @@
+$fireColor: rgb(255, 80, 0);
+$fireColorT: rgba(255, 80, 0, 0);
+$duration: 1s;
+$blur: 0.2em;
+$parts: 50;
+
+.fire {
+    font-size: 1rem;
+    position: relative;
+    --particle-size: 3em;
+    aspect-ratio: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: -0.5rem;
+        right: -0.5rem;
+        bottom: -1.5rem;
+        height: 100%;
+        background: url(/brazier.png) bottom center no-repeat;
+        background-size: contain;
+    }
+}
+
+.particle {
+    animation: rise $duration ease-in infinite;
+    background-image: radial-gradient($fireColor 20%, $fireColorT 70%);
+    border-radius: 50%;
+    mix-blend-mode: screen;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    width: var(--particle-size);
+    height: var(--particle-size);
+
+    @for $p from 1 through $parts {
+        &:nth-of-type(#{$p}) {
+            animation-delay: $duration * random();
+            left: calc((100% - var(--particle-size)) * #{($p - 1) / $parts});
+        }
+    }
+}
+
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(0) scale(1);
+    }
+    25% {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10em) scale(0);
+    }
+}

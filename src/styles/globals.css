@@ -1,44 +1,144 @@
 @tailwind base;
+
+@layer base {
+
+    main {
+        @apply flex min-h-screen flex-col items-stretch justify-stretch content-stretch justify-items-stretch self-stretch;
+    }
+
+    main > div {
+        @apply relative min-h-screen
+            md:pb-64 md:pt-64
+            xl:pb-64 xl:pt-64 
+            flex flex-col justify-stretch items-stretch flex-grow;
+    }
+    main.full > div {
+        @apply max-w-none mx-0;
+    }
+
+    main h1 {
+        @apply text-9xl font-display;
+    }
+    main h2 {
+        @apply text-7xl font-display mt-4 mb-5 text-center;
+    }
+    main h3 {
+        @apply text-5xl font-display mt-16 mb-5;
+    }
+
+    main p {
+        @apply font-primary mb-5;
+    }
+
+    main ul {
+        @apply block font-primary mb-5;
+    }
+    main li {
+        @apply list-disc ml-4;
+    }
+
+    header h1, footer h1 {
+        @apply text-9xl font-display;
+    }
+}
+
 @tailwind components;
 @tailwind utilities;
 
 html {
     font-size: 16px;
-    @screen md {
-      font-size: 20px;
-    }
-    @screen lg {
-      font-size: 26px;
-    }
-  }
 
+    @screen md {
+        font-size: 20px;
+    }
+
+    @screen lg {
+        font-size: 26px;
+    }
+}
+/* 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 243, 235, 220;
+    --foreground-rgb: 0, 0, 0;
+    --background-rgb: 243, 235, 220;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 51, 47, 34;
-  }
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-rgb: 51, 47, 34;
+    }
+} */
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-rgb: 243, 235, 220;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background-color: rgb(var(--background-rgb));
+    color: rgb(var(--foreground-rgb));
+    background-color: rgb(var(--background-rgb));
+}
+
+main {
+    @apply mt-8;
 }
 
 .jungle {
-    background:
-      url(/jungle-l.png) center left no-repeat;
+    background-image: url(/jungle-l.png);
+    background-position: center left;
+    background-repeat: no-repeat;
     background-size: auto 100%;
 
     @screen md {
-        background:
-          url(/jungle-l.png) center left no-repeat,
-          url(/jungle-r.png) center right no-repeat;
+        background-image: url(/jungle-l.png), url(/jungle-r.png);
+        background-position: center left, center right;
+        background-repeat: no-repeat, no-repeat;
         background-size: auto 100%, auto 100%;
         font-size: 17px;
     }
+}
+
+
+.dirt {
+    background:
+        url(/bg.jpg) center left repeat;
+    background-size: cover;
+}
+
+
+.map {
+    background-image: url(/map.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.x {
+    background-image: url(/x.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.note {
+    background-image: url(/note.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    aspect-ratio: 4 / 3.5;
+}
+
+.fog {
+    background-image: url(/fog.png);
+    background-position: center center;
+    background-repeat: repeat;
+}
+
+.code-of-conduct h3::before {
+    @apply content-['§'] font-normal pr-3;
+}
+.code-of-conduct p::first-letter {
+    @apply text-xl tracking-wide;
+}
+.code-of-conduct a {
+    @apply underline underline-offset-2;
 }

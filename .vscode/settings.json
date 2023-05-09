@@ -1,0 +1,10 @@
+{
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false
+    },
+    "[typescriptreact]": {
+        "editor.tabSize": 2,
+        "editor.detectIndentation": false
+    },
+}
