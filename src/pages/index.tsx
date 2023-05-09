@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import { Bebas_Neue, Homemade_Apple } from 'next/font/google'
-import { useMemo } from 'react'
 import { BsDiscord, BsTwitter, BsGithub } from 'react-icons/bs'
 import { SiMattermost } from 'react-icons/si'
 import { FaMapMarkerAlt } from 'react-icons/fa'
@@ -9,7 +8,7 @@ const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 const apple = Homemade_Apple({ weight: '400', subsets: ['latin'] })
 
 const Button = (props: React.HTMLAttributes<HTMLButtonElement>) =>
-  <button className={`bg-sand-dark hover:bg-blue-700 text-sand font-bold py-2 px-4 m-4 rounded ${props.className}`}>
+  <button className={`bg-sand-dark text-sand font-bold py-2 px-4 m-1 md:m-4 ${props.className}`}>
     {props.children}
   </button>
 
@@ -40,7 +39,10 @@ export default function Home() {
               <Button>Registration</Button>
               <Button>Submit your project</Button>
             </div>
-            <div className="pb-12 md:pb-0 md:pt-10 text-sand-dark text-6xl md:text-sand flex gap-10">
+            <div className={`
+              text-sand-dark text-6xl md:text-sand flex gap-10 pb-20 md:pb-0
+              flex-wrap justify-center
+            `}>
               <a href="https://discord.gg/qUzW56dZT2"><BsDiscord /></a>
               <a href="https://twitter.com/ohbmopen"><BsTwitter /></a>
               <a href="https://mattermost.brainhack.org/brainhack/channels/hbm-hackathon"><SiMattermost /></a>
@@ -63,7 +65,7 @@ export default function Home() {
         </div>
       </div>
       <div className="p-12 md:p-16 lg:p-32 md:pb-64 md:pt-64 flex justify-center items-center flex-grow bg-jungle text-white">
-        <div className="grid max-w-6xl min-h-screen md:min-h-fit grid-cols-1 md:grid-cols-2 flex-grow">
+        <div className="grid max-w-6xl min-h-screen md:min-h-fit grid-cols-1 md:grid-cols-2 flex-grow reverse">
           <div className="flex md:px-0 mb-10 md:mb-0 items-start">
             <Image
               className="object-contain !relative"

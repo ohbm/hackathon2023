@@ -1,10 +1,4 @@
-import Image from 'next/image'
-import { Bebas_Neue } from 'next/font/google'
-import LocalFont from 'next/font/local'
-import { GoogleMap, useLoadScript } from '@react-google-maps/api'
-import React, { useMemo } from 'react'
-
-const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
+import React from 'react'
 
 export default function Schedule() {
 

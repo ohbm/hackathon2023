@@ -1,5 +1,3 @@
-import Flames from '@/components/flames'
-
 export default function Schedule() {
   return (
     <>
