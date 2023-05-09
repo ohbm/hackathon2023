@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import { Bebas_Neue, Nothing_You_Could_Do, Homemade_Apple } from 'next/font/google'
-import LocalFont from 'next/font/local'
-import { GoogleMap, useLoadScript } from '@react-google-maps/api'
+import { Bebas_Neue, Homemade_Apple } from 'next/font/google'
 import { useMemo } from 'react'
-import { BsDiscord } from 'react-icons/bs'
+import { BsDiscord, BsTwitter, BsGithub } from 'react-icons/bs'
+import { SiMattermost } from 'react-icons/si'
+import { FaMapMarkerAlt } from 'react-icons/fa'
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 const apple = Homemade_Apple({ weight: '400', subsets: ['latin'] })
@@ -14,28 +14,6 @@ const Button = (props: React.HTMLAttributes<HTMLButtonElement>) =>
   </button>
 
 export default function Home() {
-
-  const libraries = useMemo(() => ['places'], []);
-  const mapCenter = useMemo(
-    () => ({ lat: 27.672932021393862, lng: 85.31184012689732 }),
-    []
-  );
-  const mapOptions = useMemo<google.maps.MapOptions>(
-    () => ({
-      disableDefaultUI: true,
-      clickableIcons: true,
-      scrollwheel: false,
-    }),
-    []
-  );
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: "AIzaSyDOeyARupaWJ7LVB2uRkWotvDf9-xbG3rQ",
-    libraries: libraries as any,
-  });
-  if (!isLoaded) {
-    return <p>Loading...</p>;
-  }
-
   return (
     <main className="full">
       <div className={`
@@ -62,8 +40,12 @@ export default function Home() {
               <Button>Registration</Button>
               <Button>Submit your project</Button>
             </div>
-            <div className="pb-12 md:pb-0 md:pt-10 text-sand-dark text-6xl md:text-sand text-center">
-              <BsDiscord />
+            <div className="pb-12 md:pb-0 md:pt-10 text-sand-dark text-6xl md:text-sand flex gap-10">
+              <a href="https://discord.gg/qUzW56dZT2"><BsDiscord /></a>
+              <a href="https://twitter.com/ohbmopen"><BsTwitter /></a>
+              <a href="https://mattermost.brainhack.org/brainhack/channels/hbm-hackathon"><SiMattermost /></a>
+              <a href="https://github.com/ohbm/"><BsGithub /></a>
+              <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8"><FaMapMarkerAlt /></a>
             </div>
           </div>
           <div className="relative flex px-8 md:px-0 items-end">
@@ -109,10 +91,14 @@ export default function Home() {
         </div>
       </div>
       <div className="map relative min-h-3/5 md:min-h-max">
-        <div className="x absolute w-20 h-20 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"></div>
-        <div className={`note ${apple.className} px-6 text-4xl text-center absolute w-72 top-1/2 left-1/2 -translate-x-1/2 md:-translate-x-20 translate-y-12 flex flex-col justify-center `}>
-          <span className="block text-6xl">51</span>
-          Sherbrooke<br />St West
+        <div className="x absolute w-20 h-20 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex">
+        <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8" className="grow"></a>
+        </div>
+        <div className={`note ${apple.className} px-6 text-4xl text-center absolute w-72 top-1/2 left-1/2 -translate-x-1/2 md:-translate-x-20 translate-y-12 flex flex-col justify-center`}>
+          <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8" className="grow flex flex-col justify-center">
+            <span className="block text-6xl">51</span>
+            Sherbrooke<br />St West
+          </a>
         </div>
         {/* {http://maps.stamen.com/m2i/#watercolor/3000:2000/15/45.5082/-73.5584} */}
       </div>

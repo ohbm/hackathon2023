@@ -29,7 +29,7 @@ export default function Schedule() {
         <div style={{
           gridTemplateColumns: `repeat(${days.length + 1}, minmax(0, 1fr))`,
           gridTemplateRows: `repeat(${hours.length + 1}, minmax(0, 1fr))`,
-        }} className={`grid grid-flow-col-dense bg-white p-6`}>
+        }} className={`grid grid-flow-col-dense bg-white p-6 text-center`}>
           <div className="border-black border-2">Day</div>
           { hours.map((hour) => (<div key={hour} className="border-black border-2">{MinToMMSS(hour)}</div>)) }
 
