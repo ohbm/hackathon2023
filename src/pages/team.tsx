@@ -58,6 +58,17 @@ export default function Schedule() {
           <TeamMember
             circle="circle"
             size={2}
+            name="Suami Rocha"
+            photo="suami-rocha"
+            place="Belém, Brazil"
+            social={{
+              twitter: "https://twitter.com/suamirochadev",
+              github: "https://github.com/suamirocha",
+            }}
+          />
+          <TeamMember
+            circle="circle"
+            size={2}
             name="Qing (Vincent) Wang"
             photo="qing-wang"
             place="Montreal, Canada"
