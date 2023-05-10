@@ -12,8 +12,8 @@ if (isGithubActions) {
 const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
-  assetPrefix,
-  basePath,
+  assetPrefix: assetPrefix,
+  basePath: basePath,
   images: {
     unoptimized: true,
   },
