@@ -10,7 +10,7 @@ export default function TrainTrack() {
       <div className={`
         flex flex-col gap-8 items-center justify-center flex-grow
         relative min-h-screen p-12 py-16 md:p-16 lg:p-32 md:pb-64 md:pt-64
-        after:absolute after:-z-20 after:content-[''] after:bottom-0 after:left-0 after:right-0 after:inset-3/4\
+        after:absolute after:-z-20 after:content-[''] after:bottom-0 after:left-0 after:right-0 after:inset-3/4
         after:bg-deep-sea after:bg-center after:bg-cover after:from-transparent after:to-sand
       `}>
         <div className="max-w-6xl">
