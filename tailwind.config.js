@@ -46,7 +46,7 @@ module.exports = {
         'almost-black': '#091517',
       },
       backgroundImage: {
-        'deep-sea': "linear-gradient(0deg, var(--tw-gradient-stops)), url(./public/deep-sea.jpg)",
+        'deep-sea': "linear-gradient(0deg, var(--tw-gradient-stops)), url(../../public/deep-sea.jpg)",
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
