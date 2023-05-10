@@ -7,7 +7,7 @@
     }
 
     main > div {
-        @apply relative min-h-screen
+        @apply relative md:min-h-screen
             md:pb-64 md:pt-64
             xl:pb-64 xl:pt-64 
             flex flex-col justify-stretch items-stretch flex-grow;

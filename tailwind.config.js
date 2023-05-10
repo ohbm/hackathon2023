@@ -65,7 +65,10 @@ module.exports = {
         'span-14': 'span 14 / span 14',
         'span-15': 'span 15 / span 15',
         'span-16': 'span 16 / span 16',
-      }
+      },
+      dropShadow: {
+        opaque: ['0 0px 13px rgb(0 0 0)', '0 -5px 5px rgb(0 0 0)'],
+      },
     },
   },
   corePlugins: {

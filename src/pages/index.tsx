@@ -8,13 +8,13 @@ const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 const apple = Homemade_Apple({ weight: '400', subsets: ['latin'] })
 
 const Button = (props: React.HTMLAttributes<HTMLButtonElement>) =>
-  <button className={`bg-sand-dark text-sand font-bold py-2 px-4 m-1 md:m-4 ${props.className}`}>
+  <button className={`bg-sand-dark text-sand font-bold py-2 px-4 ${props.className}`}>
     {props.children}
   </button>
 
 export default function Home() {
   return (
-    <main className="full">
+    <main className="full mt-1">
       <div className={`
         jungle
         p-12 md:p-16 lg:p-32 md:pb-64 md:pt-64 flex justify-center items-center flex-grow
@@ -26,33 +26,23 @@ export default function Home() {
           grid grid-cols-1 md:grid-cols-2 flex-grow
         `}>
           <div className="flex flex-col items-center justify-center">
-            <h2 className={`${bebas.className} mb-5 text-7xl font-semibold`}>
-              OHBM Brainhack <span className="block text-9xl">2023</span>
+            <h2 className={`${bebas.className} mb-5 font-semibold`}>
+              OHBM Brainhack <span className="block md:text-9xl">2023</span>
             </h2>
             <p
-              className={`${bebas.className} m-0 text-3xl bg-sand p-2`}
+              className={`${bebas.className} m-0 md:text-3xl bg-sand p-2`}
             >
               July 19-21, 2023 <br />
               Montreal, CA.
             </p>
-            <div className="p-6 text-lg text-sand-dark md:text-sand text-center">
-              <Button>Registration</Button>
-              <Button>Submit your project</Button>
-            </div>
-            <div className={`
-              text-sand-dark text-6xl md:text-sand flex gap-10 pb-20 md:pb-0
-              flex-wrap justify-center
-            `}>
-              <a href="https://discord.gg/qUzW56dZT2"><BsDiscord /></a>
-              <a href="https://twitter.com/ohbmopen"><BsTwitter /></a>
-              <a href="https://mattermost.brainhack.org/brainhack/channels/hbm-hackathon"><SiMattermost /></a>
-              <a href="https://github.com/ohbm/"><BsGithub /></a>
-              <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8"><FaMapMarkerAlt /></a>
+            <div className="m-3 md:pt-0 text-xs md:text-lg text-sand-dark md:text-sand text-center grid grid-cols-2 xl:pb-6 gap-2">
+              <Button>Register</Button>
+              <Button>Submit</Button>
             </div>
           </div>
-          <div className="relative flex px-8 md:px-0 items-end">
+          <div className="relative flex px-8 md:px-0 items-center md:items-end">
             <Image
-              className="object-contain md:max-h-3/4 lg:max-h-3/4 xl:max-h-3/4 !relative"
+              className="object-contain max-h-3/4 md:max-h-3/4 lg:max-h-3/4 xl:max-h-3/4 !relative"
               src="/golden-brain.png"
               alt="The Golden Brain"
               priority
@@ -62,6 +52,17 @@ export default function Home() {
                       33vw"
             />
           </div>
+        </div>
+        <div className={`
+          text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 py-5 md:pb-0
+          flex-wrap justify-center
+          md:absolute md:bottom-16 md:left-0 md:right-0 md:inset-x-0 z-30
+        `}>
+          <a href="https://discord.gg/qUzW56dZT2"><BsDiscord className="filter drop-shadow-opaque" /></a>
+          <a href="https://twitter.com/ohbmopen"><BsTwitter className="filter drop-shadow-opaque" /></a>
+          <a href="https://mattermost.brainhack.org/brainhack/channels/hbm-hackathon"><SiMattermost className="filter drop-shadow-opaque" /></a>
+          <a href="https://github.com/ohbm/"><BsGithub className="filter drop-shadow-opaque" /></a>
+          <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8"><FaMapMarkerAlt className="filter drop-shadow-opaque" /></a>
         </div>
       </div>
       <div className="p-12 md:p-16 lg:p-32 md:pb-64 md:pt-64 flex justify-center items-center flex-grow bg-jungle text-white">
@@ -98,6 +99,7 @@ export default function Home() {
         </div>
         <div className={`note ${apple.className} px-6 text-4xl text-center absolute w-72 top-1/2 left-1/2 -translate-x-1/2 md:-translate-x-20 translate-y-12 flex flex-col justify-center`}>
           <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8" className="grow flex flex-col justify-center">
+            <FaMapMarkerAlt className="absolute text-7xl top-4 right-4" />
             <span className="block text-6xl">51</span>
             Sherbrooke<br />St West
           </a>
