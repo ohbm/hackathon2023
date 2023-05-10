@@ -15,8 +15,8 @@ export default function Schedule() {
             photo="yufang-yang"
             place="Berlin, Germany"
             social={{
-              twitter: "https://twitter.com/ufangyang",
-              github: "https://github.com/ufangYang",
+              twitter: "ufangyang",
+              github: "ufangYang",
             }}
           />
           <TeamMember
@@ -26,8 +26,8 @@ export default function Schedule() {
             photo="ani"
             place="Austin, USA"
             social={{
-              twitter: "https://twitter.com/anibalsolon",
-              github: "https://github.com/anibalsolon",
+              twitter: "anibalsolon",
+              github: "anibalsolon",
             }}
           />
         </div>
@@ -40,8 +40,8 @@ export default function Schedule() {
             photo="andrea-gondova"
             place="Paris, France"
             social={{
-              twitter: "https://twitter.com/reaGondova",
-              github: "https://github.com/AdaGondova",
+              twitter: "reaGondova",
+              github: "AdaGondova",
             }}
           />
           <TeamMember
@@ -51,8 +51,8 @@ export default function Schedule() {
             photo="xinhui-li"
             place="Atlanta, USA"
             social={{
-              twitter: "https://twitter.com/xin_hui_li",
-              github: "https://github.com/XinhuiLi",
+              twitter: "xin_hui_li",
+              github: "XinhuiLi",
             }}
           />
           <TeamMember
@@ -62,8 +62,8 @@ export default function Schedule() {
             photo="suami-rocha"
             place="Belém, Brazil"
             social={{
-              twitter: "https://twitter.com/suamirochadev",
-              github: "https://github.com/suamirocha",
+              twitter: "suamirochadev",
+              github: "suamirocha",
             }}
           />
           <TeamMember
@@ -73,8 +73,8 @@ export default function Schedule() {
             photo="qing-wang"
             place="Montreal, Canada"
             social={{
-              twitter: "https://twitter.com/QingWan99752335",
-              github: "https://github.com/Vincent-wq",
+              twitter: "QingWan99752335",
+              github: "Vincent-wq",
             }}
           />
           <TeamMember
@@ -84,8 +84,8 @@ export default function Schedule() {
             photo="bruno-hebling-vieira"
             place="Zurich, Switzerland"
             social={{
-              twitter: "https://twitter.com/HeblingVieira",
-              github: "https://github.com/bhvieira",
+              twitter: "HeblingVieira",
+              github: "bhvieira",
             }}
           />
           <TeamMember
@@ -95,8 +95,8 @@ export default function Schedule() {
             photo="sina-mansour-l"
             place="Melbourne, Australia"
             social={{
-              twitter: "https://twitter.com/Sina_Mansour_L",
-              github: "https://github.com/sina-mansour",
+              twitter: "Sina_Mansour_L",
+              github: "sina-mansour",
             }}
           />
         </div>
