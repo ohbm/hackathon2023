@@ -3,6 +3,8 @@ import { Bebas_Neue, Homemade_Apple } from 'next/font/google'
 import { BsDiscord, BsTwitter, BsGithub } from 'react-icons/bs'
 import { SiMattermost } from 'react-icons/si'
 import { FaMapMarkerAlt } from 'react-icons/fa'
+import GoldenBrain from '../../public/golden-brain.png'
+import BrainMap from '../../public/brain-map.png'
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 const apple = Homemade_Apple({ weight: '400', subsets: ['latin'] })
@@ -43,7 +45,7 @@ export default function Home() {
           <div className="relative flex px-8 md:px-0 items-center md:items-end">
             <Image
               className="object-contain max-h-3/4 md:max-h-3/4 lg:max-h-3/4 xl:max-h-3/4 !relative"
-              src="/golden-brain.png"
+              src={GoldenBrain}
               alt="The Golden Brain"
               priority
               fill
@@ -70,7 +72,7 @@ export default function Home() {
           <div className="flex md:px-0 mb-10 md:mb-0 items-start">
             <Image
               className="object-contain !relative"
-              src="/brain-map.png"
+              src={BrainMap}
               alt="Brain Map"
               priority
               fill

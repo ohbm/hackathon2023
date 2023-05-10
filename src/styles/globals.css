@@ -83,13 +83,13 @@ main {
 }
 
 .jungle {
-    background-image: url(/jungle-l.png);
+    background-image: url(../../public/jungle-l.png);
     background-position: center left;
     background-repeat: no-repeat;
     background-size: auto 100%;
 
     @screen md {
-        background-image: url(/jungle-l.png), url(/jungle-r.png);
+        background-image: url(../../public/jungle-l.png), url(../../public/jungle-r.png);
         background-position: center left, center right;
         background-repeat: no-repeat, no-repeat;
         background-size: auto 100%, auto 100%;
@@ -100,27 +100,27 @@ main {
 
 .dirt {
     background:
-        url(/bg.jpg) center left repeat;
+        url(../../public/bg.jpg) center left repeat;
     background-size: cover;
 }
 
 
 .map {
-    background-image: url(/map.png);
+    background-image: url(../../public/map.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .x {
-    background-image: url(/x.png);
+    background-image: url(../../public/x.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
 .note {
-    background-image: url(/note.png);
+    background-image: url(../../public/note.png);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
@@ -128,7 +128,7 @@ main {
 }
 
 .fog {
-    background-image: url(/fog.png);
+    background-image: url(../../public/fog.png);
     background-position: center center;
     background-repeat: repeat;
 }

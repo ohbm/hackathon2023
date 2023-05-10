@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { Bebas_Neue } from 'next/font/google'
+import UnderConstruction from '../../public/under-construction-2.png'
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 
@@ -20,7 +21,7 @@ export default function TrainTrack() {
             <h3>Under Construction</h3>
             <Image
               className="object-contain md:max-h-3/4 lg:max-h-3/4 xl:max-h-3/4 !relative"
-              src="/under-construction-2.png"
+              src={UnderConstruction}
               alt="Under Construction"
               priority
               fill
