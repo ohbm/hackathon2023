@@ -15,7 +15,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: { // defined in _app.tsx
+      fontFamily: {
         primary: ['var(--roboto-font)', ...fontFamily.sans],
         display: ['var(--bebas-font)', ...fontFamily.serif],
         theme: ['var(--nycd-font)', ...fontFamily.serif],
