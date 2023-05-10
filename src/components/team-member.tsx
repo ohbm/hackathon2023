@@ -1,8 +1,11 @@
 import { BsTwitter, BsGithub } from 'react-icons/bs'
 
-interface TeamMemberProps {
+import Circle from '../../public/circle.png'
+import Circle1 from '../../public/circle-1.png'
+import Circle2 from '../../public/circle-2.png'
+
+interface TeamMemberProps extends React.HTMLProps<HTMLDivElement> {
   circle: string;
-  size: 1 | 2;
   name: string;
   photo: string;
   place: string;
@@ -13,39 +16,31 @@ interface TeamMemberProps {
 }
 
 export default function TeamMember(props: TeamMemberProps) {
-  const sizing = (
-    props.size === 1 ?
-    `
-          h-60 w-60
-          md:h-56 md:w-56
-          lg:h-56 lg:w-56
-          before:absolute before:content-[''] before:inset-10 md:before:inset-6 lg:before:inset-10
-    ` :
-    `
-          h-60 w-60
-          md:h-56 md:w-56
-          lg:h-56 lg:w-56
-          before:absolute before:content-[''] before:inset-6 md:before:inset-6 lg:before:inset-10
-    `
-  )
+  const circle = {
+    'circle': Circle.src,
+    'circle-1': Circle1.src,
+    'circle-2': Circle2.src,
+  }[props.circle] || Circle1.src;
   return (
-    <div className="text-center">
+    <div className="text-center" style={props.style}>
       <div
-        style={{
-          '--image-circle': `url(${props.circle}.png)`,
-          '--image-photo': `url(team/${props.photo}.png)`,
-        } as React.CSSProperties}
         className={
-          sizing +
           `
+            h-60 w-60
+            md:h-56 md:w-56
+            lg:h-56 lg:w-56
+            before:absolute before:content-[''] before:inset-6 md:before:inset-6 lg:before:inset-10
             relative
             m-auto
-            before:absolute before:content-['']
             before:bg-[image:var(--image-photo)] before:bg-cover before:bg-center before:rounded-full
             after:absolute after:content-[''] after:top-0 after:bottom-0 after:left-0 after:right-0
             after:bg-[image:var(--image-circle)] after:bg-cover
           `
         }
+        style={{
+          '--image-circle': `url(${circle})`,
+          '--image-photo': `url(${props.photo})`,
+        } as React.CSSProperties}
       >
       </div>
       <div className="mt-3 flex flex-col">

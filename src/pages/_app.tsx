@@ -61,7 +61,7 @@ function Footer() {
             <div>Discord</div>
             <div>Twitter</div>
             <div>Mattermost</div>
-            <div>OHBM</div>
+            <div>OSSIG</div>
             <div>Github</div>
           </div>
         </nav>

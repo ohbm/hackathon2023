@@ -1,4 +1,13 @@
-import TeamMember from "@/components/team-member";
+import TeamMember from '@/components/team-member'
+
+import YufangYang from '../../public/team/yufang-yang.png'
+import AnibalSolon from '../../public/team/ani.png'
+import AndreaGondova from '../../public/team/andrea-gondova.png'
+import XinhuiLi from '../../public/team/xinhui-li.png'
+import SuamiRocha from '../../public/team/suami-rocha.png'
+import QingWang from '../../public/team/qing-wang.png'
+import BrunoHeblingVieira from '../../public/team/bruno-hebling-vieira.png'
+import SinaMansourL from '../../public/team/sina-mansour-l.png'
 
 export default function Schedule() {
   return (
@@ -12,7 +21,7 @@ export default function Schedule() {
             circle="circle-1"
             size={1}
             name="Yu-Fang Yang"
-            photo="yufang-yang"
+            photo={YufangYang.src}
             place="Berlin, Germany"
             social={{
               twitter: "ufangyang",
@@ -23,7 +32,7 @@ export default function Schedule() {
             circle="circle-2"
             size={1}
             name="Anibal Sólon"
-            photo="ani"
+            photo={AnibalSolon.src}
             place="Austin, USA"
             social={{
               twitter: "anibalsolon",
@@ -37,7 +46,7 @@ export default function Schedule() {
             circle="circle"
             size={2}
             name="Andrea Gondova"
-            photo="andrea-gondova"
+            photo={AndreaGondova.src}
             place="Paris, France"
             social={{
               twitter: "reaGondova",
@@ -48,7 +57,7 @@ export default function Schedule() {
             circle="circle"
             size={2}
             name="Xinhui Li"
-            photo="xinhui-li"
+            photo={XinhuiLi.src}
             place="Atlanta, USA"
             social={{
               twitter: "xin_hui_li",
@@ -59,7 +68,7 @@ export default function Schedule() {
             circle="circle"
             size={2}
             name="Suami Rocha"
-            photo="suami-rocha"
+            photo={SuamiRocha.src}
             place="Belém, Brazil"
             social={{
               twitter: "suamirochadev",
@@ -70,7 +79,7 @@ export default function Schedule() {
             circle="circle"
             size={2}
             name="Qing (Vincent) Wang"
-            photo="qing-wang"
+            photo={QingWang.src}
             place="Montreal, Canada"
             social={{
               twitter: "QingWan99752335",
@@ -81,7 +90,7 @@ export default function Schedule() {
             circle="circle"
             size={2}
             name="Bruno Hebling Vieira"
-            photo="bruno-hebling-vieira"
+            photo={BrunoHeblingVieira.src}
             place="Zurich, Switzerland"
             social={{
               twitter: "HeblingVieira",
@@ -92,7 +101,7 @@ export default function Schedule() {
             circle="circle"
             size={2}
             name="Sina Mansour L"
-            photo="sina-mansour-l"
+            photo={SinaMansourL.src}
             place="Melbourne, Australia"
             social={{
               twitter: "Sina_Mansour_L",
