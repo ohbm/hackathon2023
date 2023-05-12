@@ -1,0 +1,141 @@
+name: Brainhack Project Form
+description: This provides the backbone structure for your project description. Please follow along to submit your project!
+title: "<My Project Name>"
+labels: ["Hackathon Project"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        *We are very excited to meet you at the 2023 OHBM Brainhack 🎉* *To submit a project, you need to register to 2023 OHBM Brainhack first, please follow [the link](http://www.humanbrainmapping.org/HackathonReg/). Thank you!*
+
+        *We have prepared this template to help with your project submission. Please fill the template (at least all 'required' items must be provided) and we will assign a 'project monitor' to follow your submission.
+        If at any time you need help or anything is unclear, please add a comment and ping your project monitor.*
+
+        Thank you!
+
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: Name of your awesome project. Please also update the title of the issue to be the title of your project
+    validations:
+      required: true
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Short description and the goals for the OHBM BrainHack
+      description: Please provide a short description and goals for the hackathon, check [the guide](https://github.com/ohbm/hackathon2023/blob/main/.github/ISSUE_TEMPLATE/handbooks/projects.md#goals) for suggestions
+    validations:
+      required: true
+
+  - type: input
+    id: link
+    attributes:
+      label: Link to the Project
+      description: Please provide **one URL** for the project, e.g. GitHub repository. See [the guide](https://github.com/ohbm/hackathon2023/blob/main/.github/ISSUE_TEMPLATE/handbooks/projects.md#link-to-project) for other suggestions.
+    validations:
+      required: true
+
+  - type: input
+    id: website-image
+    attributes:
+      label: Image for the OHBM brainhack website
+      description: Please provide a link only (not required, but highly recommended). Please provide the RAW content of the file if you use an image from a GitHub repo.
+    validations:
+      required: false
+
+  - type: textarea
+    id: project-leads
+    attributes:
+      label: Project lead
+      description: Your name and GitHub login AND Discord login (we will be using Discord during the hackathon, please be sure to register [here](https://discord.com/invite/qUzW56dZT2)). Add multiple leaders if you can, if leaders cover different Hubs, please add this next to the name.
+      placeholder: One per line
+    validations:
+      required: true
+
+  - type: dropdown
+    id: hub
+    attributes:
+      label: Main Hub
+      description: The main Hackathon Hub of your project (the project pitch will be given during in this hub), see more [here](https://github.com/ohbm/hackathon2023/blob/main/.github/ISSUE_TEMPLATE/handbooks/projects.md#hubs)
+      options:
+        - Glasgow
+        - Asia / Pacific
+        - Europe / Middle East / Africa
+        - Americas
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: otherhub
+    attributes:
+      label: Other Hub covered by the leaders
+      description: Please choose other hubs that are covered by your leaders (be sure to have at least one leader in the specific timezones, and make a note next to their names)
+      options:
+        - label: Glasgow
+        - label: Asia / Pacific
+        - label: Europe / Middle East / Africa
+        - label: Americas
+
+  - type: textarea
+    id: skills
+    attributes:
+      label: Skills
+      description: Please provide skills you expect contributors to have, so others can have better ideas if they can join. You can include non-technical skills, or simply write None, check [the guide](https://github.com/ohbm/hackathon2023/blob/main/.github/ISSUE_TEMPLATE/handbooks/projects.md#onboarding-skills) for more suggestions.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: tutorials
+    attributes:
+      label: Recommended tutorials for new contributors
+      description: We provided [a list of tutorials](https://ohbm.github.io/hackathon2023/traintrack/) that might be helpful for new contributors. Please check all the tutorials that will be useful to work on your project.
+      options:
+        - label: "[Set up a brainhack friendly computing environment](https://psy6983.brainhackmtl.org/modules/installation/)"
+        - label: "[A introduction to Bash](https://psy6983.brainhackmtl.org/modules/introduction_to_terminal/)"
+        - label: "[Python: Writing a script](https://psy6983.brainhackmtl.org/modules/python_scripts/)"
+        - label: "[Python: Data analysis with Python](https://psy6983.brainhackmtl.org/modules/python_data_analysis/)"
+        - label: "[Python: Visualisation](https://psy6983.brainhackmtl.org/modules/python_visualization/)"
+        - label: "[Machine learning basics](https://psy6983.brainhackmtl.org/modules/machine_learning_basics/)"
+        - label: "[BIDS](https://psy6983.brainhackmtl.org/modules/bids/)"
+        - label: "[Machine learning for neuroimaging](https://psy6983.brainhackmtl.org/modules/machine_learning_neuroimaging/)"
+        - label: "[VCS: Using Git and Github](https://psy6983.brainhackmtl.org/modules/git_github/)"
+        - label: "[VCS: Data management with Datalad](https://psy6983.brainhackmtl.org/modules/datalad/)"
+        - label: "[Virtualization](https://psy6983.brainhackmtl.org/modules/containers/)"
+        - label: "High Performance Computing: [Oracle cloud resource](https://brainhack.org/brainhack_cloud/)"
+
+  - type: textarea
+    id: issues
+    attributes:
+      label: Good first issues
+      description: If you welcome new contributors, please provide a list of good-first-issues (not required, but highly recommended), check [the guide](https://github.com/ohbm/hackathon2023/blob/main/.github/ISSUE_TEMPLATE/handbooks/projects.md#good-first-issues) for suggestions
+    validations:
+      required: false
+
+  - type: textarea
+    id: twiter
+    attributes:
+      label: Twitter summary
+      description: Twitter-size summary of your project pitch, please check [the guide](https://github.com/ohbm/hackathon2023/blob/master/.github/ISSUE_TEMPLATE/handbooks/projects.md#twitter-size-summary-of-your-project-pitch)
+    validations:
+      required: false
+
+  - type: input
+    id: chatchannel
+    attributes:
+      label: Short name for the Discord chat channel (~15 chars)
+      description: Please give a short name for the Discord chat channel, e.g. "my-brain-project"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: coc
+    attributes:
+      label: "Please read and follow the OHBM Code of Conduct"
+      description: Read here [the OHBM Code of Conduct](https://ohbm.github.io/hackathon2023/coc/)
+      options:
+        - label: I agree to follow the OHBM Code of Conduct during the hackathon
+          required: true
