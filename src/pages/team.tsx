@@ -8,6 +8,14 @@ import SuamiRocha from '../../public/team/suami-rocha.png'
 import QingWang from '../../public/team/qing-wang.png'
 import BrunoHeblingVieira from '../../public/team/bruno-hebling-vieira.png'
 import SinaMansourL from '../../public/team/sina-mansour-l.png'
+import Image from 'next/image'
+
+import getConfig from 'next/config'
+const {
+  publicRuntimeConfig: {
+    OSSIG_URL,
+  }
+} = getConfig()
 
 export async function getStaticProps() {
   return { props: { bodyClassName: 'jungle full-jungle fixed-jungle' } }
@@ -114,13 +122,17 @@ export default function Schedule() {
           />
         </div>
 
-        <h2 className="max-w-5xl p-4 mt-16">
-          OSSIG
+        <h2 className="max-w-5xl p-4 mt-16 ">
+          <Image
+            fill
+            src="https://ossig.netlify.app/images/logos/ossig_logo.svg"
+            alt="OSSIG logo"
+            className="object-contain max-h-24 !relative" />
         </h2>
 
         <div className="max-w-5xl p-4 md:text-2xl">
-          <p>The OHBM Open Science SIG mission is to advance neuroimaging research by fostering the open sharing of ideas, data, and tools between members of the OHBM community. This will be accomplished by organizing educational events, supporting collaborative initiatives, and providing mentorship to junior researchers.As with previous years, our three main contributions to the OHBM annual meetings are:</p>
-          <ul>
+          <p>The <a href={OSSIG_URL}>OHBM Open Science SIG</a> mission is to advance neuroimaging research by fostering the open sharing of ideas, data, and tools between members of the OHBM community. This will be accomplished by organizing educational events, supporting collaborative initiatives, and providing mentorship to junior researchers.As with previous years, our three main contributions to the OHBM annual meetings are:</p>
+          <ul className="pl-6">
             <li>organizing a Brainhack to precede the annual meeting</li>
             <li>introducing the tools of open science via interactive tutorials as part of the TrainTrack</li>
             <li>facilitating collaborative work on a wide range of open science projects</li>
@@ -133,19 +145,19 @@ export default function Schedule() {
           <TeamMember circle="circle" size={2} name="Linden Parkes" photo="https://ossig.netlify.app/images/illustrations/faces/2023/linden_parkes1.jpg" place="Treasurer" social={{ twitter: "https://twitter.com/LindenParkes" }} />
           <TeamMember circle="circle" size={2} name="Yu-Fang Yang" photo="https://ossig.netlify.app/images/illustrations/faces/2023/yufang_yang1.jpg" place="Hackathon Co-Chair" social={{ twitter: "https://twitter.com/ufangyang" }} />
           <TeamMember circle="circle" size={2} name="Anibal Solon" photo="https://ossig.netlify.app/images/illustrations/faces/2023/anibal_solon1.jpg" place="Hackathon Co-Chair" social={{ twitter: "https://twitter.com/anibalsolon" }} />
-          <TeamMember circle="circle" size={2} name="Subapriya Suppiah" photo="https://ossig.netlify.app/images/illustrations/faces/2023/subapriya_suppiah1.jpg" place="Open Science Room Co-Chair" social={{ twitter: "https://twitter.com/SubapriyaSuppi1" }} />
-          <TeamMember circle="circle" size={2} name="Selma Lugtmeijer" photo="https://ossig.netlify.app/images/illustrations/faces/2023/selma_lugtmeijer1.jpg" place="Open Science Room Co-Chair" social={{ twitter: "https://twitter.com/LugtmeijerSelma" }} />
+          <TeamMember circle="circle" size={2} name="Subapriya Suppiah" photo="https://ossig.netlify.app/images/illustrations/faces/2023/subapriya_suppiah1.jpg" place="OSR Co-Chair" social={{ twitter: "https://twitter.com/SubapriyaSuppi1" }} />
+          <TeamMember circle="circle" size={2} name="Selma Lugtmeijer" photo="https://ossig.netlify.app/images/illustrations/faces/2023/selma_lugtmeijer1.jpg" place="OSR Co-Chair" social={{ twitter: "https://twitter.com/LugtmeijerSelma" }} />
           <TeamMember circle="circle" size={2} name="Junhao Wen (Hao)" photo="https://ossig.netlify.app/images/illustrations/faces/2023/junhao_wen1.jpg" place="Hybridization Chair" social={{ twitter: "https://twitter.com/JunhaoWen" }} />
-          <TeamMember circle="circle" size={2} name="Fernando A. Barrios" photo="https://ossig.netlify.app/images/illustrations/faces/2023/fernando_barrios1.jpg" place="Inclusivity Officer" social={{ twitter: "https://twitter.com/" }} />
+          <TeamMember circle="circle" size={2} name="Fernando Barrios" photo="https://ossig.netlify.app/images/illustrations/faces/2023/fernando_barrios1.jpg" place="Inclusivity Officer" social={{ twitter: "https://twitter.com/" }} />
           <TeamMember circle="circle" size={2} name="Kangjoo Lee" photo="https://ossig.netlify.app/images/illustrations/faces/2023/kangjoo_lee1.jpg" place="Inclusivity Officer" social={{ twitter: "https://twitter.com/Kangjoo_Lee_" }} />
-          <TeamMember circle="circle" size={2} name="Nur Shahidatul Nabila&#10;binti Ibrahim" photo="https://ossig.netlify.app/images/illustrations/faces/2023/nur_nabila1.jpg" place="Community Liason Officer" social={{ twitter: "https://twitter.com/" }} />
-          <TeamMember circle="circle" size={2} name="Almudena Ramírez Haro" photo="https://ossig.netlify.app/images/illustrations/faces/2023/almudena_ramirez_haro1.jpg" place="Community Liason Officer" social={{ twitter: "https://twitter.com/" }} />
+          <TeamMember circle="circle" size={2} name="Nur Nabila" photo="https://ossig.netlify.app/images/illustrations/faces/2023/nur_nabila1.jpg" place="Community Liason Officer" social={{ twitter: "https://twitter.com/" }} />
+          <TeamMember circle="circle" size={2} name="Almudena Haro" photo="https://ossig.netlify.app/images/illustrations/faces/2023/almudena_ramirez_haro1.jpg" place="Community Liason Officer" social={{ twitter: "https://twitter.com/" }} />
           <TeamMember circle="circle" size={2} name="Nils Muhlert" photo="https://ossig.netlify.app/images/illustrations/faces/2023/nils_muhlert1.jpg" place="Chair Elect" social={{ twitter: "https://twitter.com/nilsmuhlert" }} />
           <TeamMember circle="circle" size={2} name="Subapriya Suppiah" photo="https://ossig.netlify.app/images/illustrations/faces/2023/subapriya_suppiah1.jpg" place="Secretary Elect" social={{ twitter: "https://twitter.com/SubapriyaSuppi1" }} />
           <TeamMember circle="circle" size={2} name="Yi-Ju Lee (Jean)" photo="https://ossig.netlify.app/images/illustrations/faces/2023/yiju_lee1.jpg" place="Treasurer Elect" social={{ twitter: "https://twitter.com/jean890203" }} />
           <TeamMember circle="circle" size={2} name="Qing Wang (Vincent)" photo="https://ossig.netlify.app/images/illustrations/faces/2023/qing_wang1.jpg" place="Hackathon Co-Chair Elect" social={{ twitter: "https://twitter.com/QingWan99752335" }} />
           <TeamMember circle="circle" size={2} name="Sina Mansour" photo="https://ossig.netlify.app/images/illustrations/faces/2023/sina_mansour1.jpg" place="Hackathon Co-Chair Elect" social={{ twitter: "https://twitter.com/" }} />
-          <TeamMember circle="circle" size={2} name="Xiangzhen Kong" photo="https://ossig.netlify.app/images/illustrations/faces/2023/xiangzhen_kong1.jpg" place="Open Science Room Co-Chair Elect" social={{ twitter: "https://twitter.com/xiangzhenkong" }} />
+          <TeamMember circle="circle" size={2} name="Xiangzhen Kong" photo="https://ossig.netlify.app/images/illustrations/faces/2023/xiangzhen_kong1.jpg" place="OSR Co-Chair Elect" social={{ twitter: "https://twitter.com/xiangzhenkong" }} />
         </div>
       </div>
     </main>

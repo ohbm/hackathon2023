@@ -19,7 +19,7 @@
         @apply text-7xl font-display mt-4 mb-0 text-center;
     }
     main h3 {
-        @apply text-5xl font-display mt-16 mb-0;
+        @apply text-4xl font-display mt-16 mb-0;
     }
 
     main p {
@@ -121,8 +121,8 @@ main * {
                         linear-gradient(160deg, #091517 0%, #261d0d 100%);
 
     background-repeat: no-repeat, no-repeat;
-    background-position: 0 center, 100% top, center bottom;
     background-size: auto 100%, auto 100%, auto 0%;
+    background-position: -10vmax center, 50vmax top, center bottom;
     transition: background-size 1s ease-in-out 0.25s, background-position 1s ease-in-out, background-color 1s ease-in-out;
     font-size: 17px;
 }
@@ -130,7 +130,7 @@ main * {
 .jungle.no-jungle main:before {
     background-color: #FFFFFF00;
     background-size: auto 100%, auto 100%, auto 0;
-    background-position: -100vw center, 100vw top, center bottom;
+    background-position: -100vmax center, 100vmax top, center bottom;
 }
 
 .jungle.fade-jungle main:before {
@@ -138,7 +138,7 @@ main * {
     background-size: auto 100%, auto 100%, auto 0;
     background-position: -100vmax center, 100vmax top, center bottom;
 }
-.jungle.fade-jungle main * {
+.jungle.fade-jungle main *, .jungle.no-jungle main * {
     opacity: 0;
     animation: 0.5s ease-out 0.5s fade-in;
     animation-fill-mode: forwards;
@@ -150,6 +150,7 @@ main * {
 .jungle.full-jungle main:before {
     background-size: auto 100%, auto 100%, auto 100%;
     background-attachment: fixed;
+    min-height: 100vh;
 }
 .jungle.fixed-jungle main:before {
     position: fixed;

@@ -1,18 +1,31 @@
 import Image from 'next/image'
-import { Bebas_Neue, Homemade_Apple, Covered_By_Your_Grace } from 'next/font/google'
+import { Bebas_Neue, Covered_By_Your_Grace } from 'next/font/google'
 import { BsDiscord, BsTwitter, BsGithub } from 'react-icons/bs'
 import { SiMattermost } from 'react-icons/si'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import GoldenBrain from '../../public/golden-brain.png'
 import BrainMap from '../../public/brain-map.png'
 
+import getConfig from 'next/config'
+const {
+  publicRuntimeConfig: {
+    REGISTRATION_URL,
+    PROJECTS_SUBMISSION_URL,
+    DISCORD_URL,
+    TWITTER_URL,
+    MATTERMOST_URL,
+    GITHUB_URL,
+    MAPS_URL,
+  }
+} = getConfig()
+
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 const apple = Covered_By_Your_Grace({ weight: '400', subsets: ['latin'] })
 
-const Button = (props: React.HTMLAttributes<HTMLButtonElement>) =>
-  <button className={`bg-sand-dark text-sand font-bold py-2 px-4 ${props.className}`}>
+const Button = ({ className, ...props }: React.HTMLAttributes<HTMLAnchorElement>) =>
+  <a className={`bg-sand-dark text-sand font-bold py-2 px-4 ${className}`} {...props}>
     {props.children}
-  </button>
+  </a>
 
 export async function getStaticProps() {
   return { props: { bodyClassName: 'jungle half-jungle fixed-jungle' } }
@@ -30,25 +43,25 @@ export default function Home() {
           grid grid-cols-1 md:grid-cols-2 flex-grow
         `}>
           <div className="flex flex-col items-center justify-center">
-            <h2 className={`${bebas.className} mb-5 font-semibold`}>
+            <h2 className={`${bebas.className} mb-3 font-semibold`}>
               OHBM<br/>Brainhack <span className="block md:text-9xl">2023</span>
             </h2>
 
             <div className={`${bebas.className} text-xl md:text-xl lg:text-xl bg-sand-dark text-sand p-2 text-center`}>
               July 19-21, 2023
             </div>
-            <div className="grid grid-cols-2 md:flex md:items-stretch gap-2 pt-4">
-              <Button>Register</Button>
-              <Button>Submit</Button>
+            <div className="grid grid-cols-2 md:flex md:items-stretch gap-2 pt-2">
+              <Button href={REGISTRATION_URL}>Register</Button>
+              <Button href={PROJECTS_SUBMISSION_URL}>Submit</Button>
             </div>
             <div className={`
-              text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 pt-8 pb-0
+              text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 mt-8 md:pt-12 pb-0
             `}>
-              <a href="https://discord.gg/qUzW56dZT2"><BsDiscord className="filter drop-shadow-opaque" /></a>
-              <a href="https://twitter.com/ohbmopen"><BsTwitter className="filter drop-shadow-opaque" /></a>
-              <a href="https://mattermost.brainhack.org/brainhack/channels/hbm-hackathon"><SiMattermost className="filter drop-shadow-opaque" /></a>
-              <a href="https://github.com/ohbm/"><BsGithub className="filter drop-shadow-opaque" /></a>
-              <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8"><FaMapMarkerAlt className="filter drop-shadow-opaque" /></a>
+              <a href={DISCORD_URL}><BsDiscord className="filter drop-shadow-opaque" /></a>
+              <a href={TWITTER_URL}><BsTwitter className="filter drop-shadow-opaque" /></a>
+              <a href={MATTERMOST_URL}><SiMattermost className="filter drop-shadow-opaque" /></a>
+              <a href={GITHUB_URL}><BsGithub className="filter drop-shadow-opaque" /></a>
+              <a href={MAPS_URL}><FaMapMarkerAlt className="filter drop-shadow-opaque" /></a>
             </div>
           </div>
           <div className="relative flex flex-col md:px-0 items-center justify-center text-bolder shadow-white">
@@ -84,7 +97,7 @@ export default function Home() {
                       50vw"
             />
           </div>
-          <div className="flex flex-col justify-center text-lg">
+          <div className="flex flex-col justify-center text-lg px-8 pb-8">
             <h3 className={`${bebas.className} mb-2 mt-0 text-4xl font-semibold text-gold`}>What is OHBM?</h3>
             <p className="mb-2 text-sand">OHBM is the Organization for Human Brain Mapping. A Society of scientists dedicated to mapping the brain using all neuroimaging technologies.</p>
             <h3 className={`${bebas.className} mb-2 mt-6 text-4xl font-semibold text-gold`}>What is Brainhack?</h3>
@@ -98,7 +111,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="map relative min-h-3/5 md:min-h-3/5">
+      <div className="map relative min-h-3/5 md:min-h-3/5 z-50">
         <div className="x absolute w-20 h-20 -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 flex">
         <a href="https://goo.gl/maps/7txMm7UuJ8nKPraC8" className="grow"></a>
         </div>

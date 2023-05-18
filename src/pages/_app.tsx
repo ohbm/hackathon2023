@@ -6,6 +6,18 @@ import Link from 'next/link';
 import { Bebas_Neue, Roboto, Nothing_You_Could_Do } from 'next/font/google'
 import { useEffect } from 'react';
 
+import getConfig from 'next/config'
+const {
+  publicRuntimeConfig: {
+    DISCORD_URL,
+    TWITTER_URL,
+    MATTERMOST_URL,
+    GITHUB_URL,
+    OSSIG_URL,
+    MAPS_URL,
+  }
+} = getConfig()
+
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
 const nycd = Nothing_You_Could_Do({ weight: '400', subsets: ['latin'] })
@@ -42,7 +54,7 @@ function Header() {
 function Footer() {
   return (
     <footer className="relative flex justify-center px-1 py-16 bg-dirt text-gold">
-      <div className="grid grid-cols-1 md:grid-cols-3 w-full max-w-screen-xl items-center justify-center text-center md:text-left pb-16 md:pb-0">
+      <div className="grid grid-cols-1 md:grid-cols-3 w-full max-w-screen-xl items-center justify-center text-center md:text-left md:pb-0">
         <h1 className="text-5xl">OHBM<br />Hackathon<br />2023</h1>
         <div className="py-6 md:py-0">
           <h2 className="font-display text-3xl mb-0 text-center md:text-left">Organizers</h2>
@@ -52,18 +64,18 @@ function Footer() {
         </div>
         <nav className="font-primary flex md:gap-6 text-1xl justify-around">
           <div className="flex flex-col gap-1">
-            <div>Code of Conduct</div>
-            <div>Schedule</div>
-            <div>Hacktrack</div>
-            <div>Traintrack</div>
-            <div>Team</div>
+            <div><Link href="/code-of-conduct">Code of Conduct</Link></div>
+            <div><Link href="/schedule">Schedule</Link></div>
+            <div><Link href="/hacktrack">Hacktrack</Link></div>
+            <div><Link href="/traintrack">Traintrack</Link></div>
+            <div><Link href="/team">Team</Link></div>
           </div>
           <div className="flex flex-col gap-1">
-            <div>Discord</div>
-            <div>Twitter</div>
-            <div>Mattermost</div>
-            <div>OSSIG</div>
-            <div>Github</div>
+            <div><a href={DISCORD_URL}>Discord</a></div>
+            <div><a href={TWITTER_URL}>Twitter</a></div>
+            <div><a href={MATTERMOST_URL}>Mattermost</a></div>
+            <div><a href={OSSIG_URL}>OSSIG</a></div>
+            <div><a href={GITHUB_URL}>Github</a></div>
           </div>
         </nav>
       </div>
