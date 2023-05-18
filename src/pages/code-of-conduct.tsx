@@ -1,3 +1,7 @@
+export async function getStaticProps() {
+  return { props: { bodyClassName: 'jungle no-jungle' } }
+}
+
 export default function Schedule() {
   return (
     <>

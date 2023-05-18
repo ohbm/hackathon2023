@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import Link from 'next/link';
 import { Bebas_Neue, Roboto, Nothing_You_Could_Do } from 'next/font/google'
+import { useEffect } from 'react';
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 const roboto = Roboto({ weight: '400', subsets: ['latin'] })
@@ -16,9 +17,9 @@ function Header() {
         <title>OHBM Hackathon 2023</title>
       </Head>
       <header className="font-display w-full absolute top-0 left-0 h-fit right-0 justify-center px-1 py-2 bg-dirt text-gold uppercase z-50">
-        <div className="flex w-full max-w-screen-xl text-xl px-4 mx-auto">
+        <div className="flex w-full max-w-screen-xl px-4 mx-auto">
           <h1 className="text-3xl"><Link href="/">OHBM Hackathon</Link></h1>
-          <nav className="flex-grow justify-end items-start md:items-center flex group">
+          <nav className="flex-grow justify-end items-start md:items-center flex group text-lg lg:text-lg">
             <div className="hidden group-focus-within:flex md:flex gap-4 justify-end flex-col md:flex-row mb-4 mr-2 md:mb-0">
               <div><Link href="/code-of-conduct">Code of Conduct</Link></div>
               <div><Link href="/schedule">Schedule</Link></div>
@@ -40,8 +41,8 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="flex justify-center px-1 py-16 bg-dirt text-gold">
-      <div className="grid grid-cols-1 md:grid-cols-3 w-full max-w-screen-xl items-center justify-center text-center md:text-left">
+    <footer className="relative flex justify-center px-1 py-16 bg-dirt text-gold">
+      <div className="grid grid-cols-1 md:grid-cols-3 w-full max-w-screen-xl items-center justify-center text-center md:text-left pb-16 md:pb-0">
         <h1 className="text-5xl">OHBM<br />Hackathon<br />2023</h1>
         <div className="py-6 md:py-0">
           <h2 className="font-display text-3xl mb-0 text-center md:text-left">Organizers</h2>
@@ -71,6 +72,9 @@ function Footer() {
 }
 
 export default function App({ Component, pageProps }: AppProps) {
+  useEffect(() => {
+    document.body.className = pageProps.bodyClassName
+  })
   return (
     <>
       <style jsx global>

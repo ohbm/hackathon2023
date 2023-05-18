@@ -4,6 +4,10 @@ import UnderConstruction from '../../public/under-construction-2.png'
 
 const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
 
+export async function getStaticProps() {
+  return { props: { bodyClassName: 'jungle no-jungle' } }
+}
+
 export default function TrainTrack() {
   return (
     <main className="fog">

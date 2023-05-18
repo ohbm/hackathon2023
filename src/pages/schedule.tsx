@@ -1,5 +1,9 @@
 import React from 'react'
 
+export async function getStaticProps() {
+  return { props: { bodyClassName: 'jungle fade-jungle' } }
+}
+
 export default function Schedule() {
 
   const range = (start: number, stop: number, step: number): number[] => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step))
@@ -14,139 +18,169 @@ export default function Schedule() {
    }
 
   return (
-    <main className="jungle">
-      <div className="max-w-6xl mx-auto">
-        <h2>
-          Schedule
-        </h2>
+    <main>
+      <div className="justify-center items-center">
+        <div className="max-w-6xl">
+          <h2>
+            Schedule
+          </h2>
 
-        <div style={{
-          gridTemplateColumns: `repeat(${days.length + 1}, minmax(0, 1fr))`,
-          gridTemplateRows: `repeat(${hours.length + 1}, minmax(0, 1fr))`,
-        }} className={`grid grid-flow-col-dense bg-white p-6 text-center`}>
-          <div className="border-black border-2">Day</div>
-          { hours.map((hour) => (<div key={hour} className="border-black border-2">{MinToMMSS(hour)}</div>)) }
+          <div style={{
+            gridTemplateColumns: `repeat(${days.length + 1}, minmax(0, 1fr))`,
+            gridTemplateRows: `repeat(${hours.length + 2}, minmax(0, 1fr))`,
+          }} className={`grid grid-flow-col-dense gap-2 bg-white p-6 text-center`}>
+            <div className="font-bold border-gray-200 border-b-2">Day</div>
+            <div className="font-bold border-gray-200 border-b-2">08:00</div>
+            <div className="font-bold border-gray-200 border-b-2">08:30</div>
+            <div className="font-bold border-gray-200 border-b-2">09:00</div>
+            <div className="font-bold border-gray-200 border-b-2">09:30</div>
+            <div className="font-bold border-gray-200 border-b-2">10:00</div>
+            <div className="font-bold border-gray-200 border-b-2">10:30</div>
+            <div className="font-bold border-gray-200 border-b-2">11:00</div>
+            <div className="font-bold border-gray-200 border-b-2">11:30</div>
+            <div className="font-bold border-gray-200 border-b-2">12:00</div>
+            <div className="font-bold border-gray-200 border-b-2">12:30</div>
+            <div className="font-bold border-gray-200 border-b-2">13:00</div>
+            <div className="font-bold border-gray-200 border-b-2">13:30</div>
+            <div className="font-bold border-gray-200 border-b-2">14:00</div>
+            <div className="font-bold border-gray-200 border-b-2">14:30</div>
+            <div className="font-bold border-gray-200 border-b-2">15:00</div>
+            <div className="font-bold border-gray-200 border-b-2">15:30</div>
+            <div className="font-bold border-gray-200 border-b-2">16:00</div>
+            <div className="font-bold border-gray-200 border-b-2">16:30</div>
+            <div className="font-bold border-gray-200 border-b-2">17:00</div>
+            <div className="font-bold border-gray-200 border-b-2">17:30</div>
+            <div className="font-bold border-gray-200 border-b-2">18:00</div>
+            <div className="font-bold border-gray-200 border-b-2">Into the night</div>
+
+            <div className="p-2 row-span-1 font-bold">
+              Jul 5 or 12
+            </div>
+            <div className="p-2 row-span-2">
+            </div>
+            <div className="p-2 row-span-6 border-black border-2">
+            Warm-up session
+            </div>
+            <div className="p-2 row-span-14">
+            </div>
+
+            <div className="p-2 row-span-1 font-bold">
+              Wed Jul 19
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Coffee and badge
+            </div>
+            <div className="p-2 row-span-1 border-black border-2">
+              Welcoming ceremory
+            </div>
+            <div className="p-2 row-span-6 border-black border-2">
+              Project Pitches &  mingling
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Lunch / Hacking
+            </div>
+            <div className="p-2 row-span-4 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-1 border-black border-2">
+              Coffee Break
+            </div>
+            <div className="p-2 row-span-1 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Presentations / Unconference
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Slow Down
+            </div>
+            <div className="p-2 row-span-1 border-black border-2 border-dashed">
+              Catch up w friends / Meet-up
+            </div>
+
+            <div className="p-2 row-span-1 font-bold">
+              Thu Jul 20
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Coffee + Morning Mingling
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Presentations / Unconference
+            </div>
+            <div className="p-2 row-span-5 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Lunch / Hacking
+            </div>
+            <div className="p-2 row-span-4 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-1 border-black border-2">
+              Coffee Break
+            </div>
+            <div className="p-2 row-span-1 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Presentations / Unconference
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Slow Down
+            </div>
+            <div className="p-2 row-span-1">
+            </div>
+
+            <div className="p-2 row-span-1 font-bold">
+              Fri Jul 21
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Coffee + Morning Mingling
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Presentations / Unconference
+            </div>
+            <div className="p-2 row-span-5 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Lunch / Hacking
+            </div>
+            <div className="p-2 row-span-4 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-1 border-black border-2">
+              Coffee Break
+            </div>
+            <div className="p-2 row-span-1 border-black border-2">
+              Hacking
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Final wrap-up
+            </div>
+            <div className="p-2 row-span-2 border-black border-2">
+              Closing
+            </div>
+            <div className="p-2 row-span-1 border-black border-2 border-dashed">
+              Soiree
+            </div>
 
 
-          <div className="row-span-1 border-black border-2">
-            Jul 5 / 12
+            {/* {
+              days.map((day) => (
+                <React.Fragment key={day}>
+                  <div className="col-span-1 flex flex-col">
+                    Jul {day}
+                  </div>
+                  {
+                    hours.map((hour) => (
+                      <div key={hour}>{MinToMMSS(hour)}</div>
+                    ))
+                  }
+                </React.Fragment>
+              ))
+            } */}
           </div>
-          <div className="row-span-2 border-black border-2">
-          </div>
-          <div className="row-span-6 border-black border-2">
-          Warm-up session
-          </div>
-          <div className="row-span-13 border-black border-2">
-          </div>
-
-          <div className="row-span-1 border-black border-2">
-            Wed Jul 19
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Coffee and badge
-          </div>
-          <div className="row-span-1 border-black border-2">
-            Welcoming ceremory
-          </div>
-          <div className="row-span-6 border-black border-2">
-            Project Pitches &  mingling
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Lunch / Hacking
-          </div>
-          <div className="row-span-4 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-1 border-black border-2">
-            Coffee Break
-          </div>
-          <div className="row-span-1 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Presentations / Unconference
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Slow Down
-          </div>
-
-          <div className="row-span-1 border-black border-2">
-            Thu Jul 20
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Coffee + Morning Mingling
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Presentations / Unconference
-          </div>
-          <div className="row-span-5 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Lunch / Hacking
-          </div>
-          <div className="row-span-4 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-1 border-black border-2">
-            Coffee Break
-          </div>
-          <div className="row-span-1 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Presentations / Unconference
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Slow Down
-          </div>
-
-          <div className="row-span-1 border-black border-2">
-            Fri Jul 21
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Coffee + Morning Mingling
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Presentations / Unconference
-          </div>
-          <div className="row-span-5 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Lunch / Hacking
-          </div>
-          <div className="row-span-4 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-1 border-black border-2">
-            Coffee Break
-          </div>
-          <div className="row-span-1 border-black border-2">
-            Hacking
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Final wrap-up
-          </div>
-          <div className="row-span-2 border-black border-2">
-            Closing
-          </div>
-
-
-          {/* {
-            days.map((day) => (
-              <React.Fragment key={day}>
-                <div className="col-span-1 flex flex-col">
-                  Jul {day}
-                </div>
-                {
-                  hours.map((hour) => (
-                    <div key={hour}>{MinToMMSS(hour)}</div>
-                  ))
-                }
-              </React.Fragment>
-            ))
-          } */}
         </div>
       </div>
     </main>

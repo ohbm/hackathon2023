@@ -26,7 +26,7 @@ export default function TeamMember(props: TeamMemberProps) {
       <div
         className={
           `
-            h-60 w-60
+            h-44 w-44
             md:h-56 md:w-56
             lg:h-56 lg:w-56
             before:absolute before:content-[''] before:inset-6 md:before:inset-6 lg:before:inset-10
