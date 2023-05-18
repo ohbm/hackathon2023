@@ -51,12 +51,14 @@ export default function Home() {
               July 19-21, 2023
             </div>
             <div className="grid grid-cols-2 md:flex md:items-stretch gap-2 pt-2">
-              <Button href={REGISTRATION_URL}>Register</Button>
-              <Button href={PROJECTS_SUBMISSION_URL}>Submit</Button>
+              <a className="bg-sand-dark text-sand font-bold py-2 px-4" href={REGISTRATION_URL}>
+                Register
+              </a>
+              <a className="bg-sand-dark text-sand font-bold py-2 px-4" href={PROJECTS_SUBMISSION_URL}>
+                Submit
+              </a>
             </div>
-            <div className={`
-              text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 mt-8 md:pt-12 pb-0
-            `}>
+            <div className="text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 mt-8 md:pt-12 pb-0">
               <a href={DISCORD_URL}><BsDiscord className="filter drop-shadow-opaque" /></a>
               <a href={TWITTER_URL}><BsTwitter className="filter drop-shadow-opaque" /></a>
               <a href={MATTERMOST_URL}><SiMattermost className="filter drop-shadow-opaque" /></a>
