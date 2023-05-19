@@ -62,7 +62,7 @@ body:
       label: Main Hub
       description: The main Hackathon Hub of your project (the project pitch will be given during in this hub), see more [here](https://github.com/ohbm/hackathon2023/blob/main/.github/ISSUE_TEMPLATE/handbooks/projects.md#hubs)
       options:
-        - Glasgow
+        - Montreal
         - Asia / Pacific
         - Europe / Middle East / Africa
         - Americas
@@ -75,7 +75,7 @@ body:
       label: Other Hub covered by the leaders
       description: Please choose other hubs that are covered by your leaders (be sure to have at least one leader in the specific timezones, and make a note next to their names)
       options:
-        - label: Glasgow
+        - label: Montreal
         - label: Asia / Pacific
         - label: Europe / Middle East / Africa
         - label: Americas
