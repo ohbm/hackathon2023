@@ -43,7 +43,7 @@ export default function Home() {
           grid grid-cols-1 md:grid-cols-2 flex-grow
         `}>
           <div className="flex flex-col items-center justify-center">
-            <h2 className={`${bebas.className} mb-3 font-semibold`}>
+            <h2 className={`${bebas.className} mb-3 font-semibold  md:text-6xl`}>
               OHBM<br/>Brainhack <span className="block md:text-9xl">2023</span>
             </h2>
 
@@ -58,7 +58,7 @@ export default function Home() {
                 Submit
               </a>
             </div>
-            <div className="text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 mt-8 md:pt-12 pb-0">
+            <div className="text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 mt-8 md:pt-20 pb-0">
               <a href={DISCORD_URL}><BsDiscord className="filter drop-shadow-opaque" /></a>
               <a href={TWITTER_URL}><BsTwitter className="filter drop-shadow-opaque" /></a>
               <a href={MATTERMOST_URL}><SiMattermost className="filter drop-shadow-opaque" /></a>
