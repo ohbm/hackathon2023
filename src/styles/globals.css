@@ -139,7 +139,7 @@ main * {
         linear-gradient(160deg, #091517 0%, #261d0d 100%);
 
     background-repeat: no-repeat, no-repeat;
-    background-size: auto 100%, auto 100%, auto 0%;
+    background-size: auto 100%, auto 100%, 100% 0%;
     background-position: -10vmax center, 50vmax top, center bottom;
     transition: background-size 1s ease-in-out 0.25s, background-position 1s ease-in-out, background-color 1s ease-in-out;
     font-size: 17px;
@@ -147,13 +147,13 @@ main * {
 
 .jungle.no-jungle main:before {
     background-color: #FFFFFF00;
-    background-size: auto 100%, auto 100%, auto 0;
+    background-size: auto 100%, auto 100%, 100% 0;
     background-position: -100vmax center, 100vmax top, center bottom;
 }
 
 .jungle.fade-jungle main:before {
     background-color: #F3EBDC;
-    background-size: auto 100%, auto 100%, auto 0;
+    background-size: auto 100%, auto 100%, 100% 0;
     background-position: -100vmax center, 100vmax top, center bottom;
 }
 
@@ -165,11 +165,11 @@ main * {
 }
 
 .jungle.half-jungle main:before {
-    background-size: auto 100%, auto 100%, auto 30%;
+    background-size: auto 100%, auto 100%, 100% 30%;
 }
 
 .jungle.full-jungle main:before {
-    background-size: auto 100%, auto 100%, auto 100%;
+    background-size: auto 100%, auto 100%, 100% 100%;
     background-attachment: fixed;
     min-height: 100vh;
 }
