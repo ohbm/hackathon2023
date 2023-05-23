@@ -94,17 +94,17 @@ body:
       label: Recommended tutorials for new contributors
       description: We provided [a list of tutorials](https://ohbm.github.io/hackathon2023/traintrack/) that might be helpful for new contributors. Please check all the tutorials that will be useful to work on your project.
       options:
-        - label: "[Set up a brainhack friendly computing environment](https://psy6983.brainhackmtl.org/modules/installation/)"
-        - label: "[A introduction to Bash](https://psy6983.brainhackmtl.org/modules/introduction_to_terminal/)"
-        - label: "[Python: Writing a script](https://psy6983.brainhackmtl.org/modules/python_scripts/)"
-        - label: "[Python: Data analysis with Python](https://psy6983.brainhackmtl.org/modules/python_data_analysis/)"
-        - label: "[Python: Visualisation](https://psy6983.brainhackmtl.org/modules/python_visualization/)"
-        - label: "[Machine learning basics](https://psy6983.brainhackmtl.org/modules/machine_learning_basics/)"
-        - label: "[BIDS](https://psy6983.brainhackmtl.org/modules/bids/)"
-        - label: "[Machine learning for neuroimaging](https://psy6983.brainhackmtl.org/modules/machine_learning_neuroimaging/)"
-        - label: "[VCS: Using Git and Github](https://psy6983.brainhackmtl.org/modules/git_github/)"
-        - label: "[VCS: Data management with Datalad](https://psy6983.brainhackmtl.org/modules/datalad/)"
-        - label: "[Virtualization](https://psy6983.brainhackmtl.org/modules/containers/)"
+        - label: "[Set up a brainhack friendly computing environment](https://school.brainhackmtl.org/modules/installation/)"
+        - label: "[A introduction to Bash](https://school.brainhackmtl.org/modules/introduction_to_terminal/)"
+        - label: "[Python: Writing a script](https://school.brainhackmtl.org/modules/python_scripts/)"
+        - label: "[Python: Data analysis with Python](https://school.brainhackmtl.org/modules/python_data_analysis/)"
+        - label: "[Python: Visualisation](https://school.brainhackmtl.org/modules/python_visualization/)"
+        - label: "[Machine learning basics](https://school.brainhackmtl.org/modules/machine_learning_basics/)"
+        - label: "[BIDS](https://school.brainhackmtl.org/modules/bids/)"
+        - label: "[Machine learning for neuroimaging](https://school.brainhackmtl.org/modules/machine_learning_neuroimaging/)"
+        - label: "[VCS: Using Git and Github](https://school.brainhackmtl.org/modules/git_github/)"
+        - label: "[VCS: Data management with Datalad](https://school.brainhackmtl.org/modules/datalad/)"
+        - label: "[Virtualization](https://school.brainhackmtl.org/modules/containers/)"
         - label: "High Performance Computing: [Oracle cloud resource](https://brainhack.org/brainhack_cloud/)"
 
   - type: textarea
