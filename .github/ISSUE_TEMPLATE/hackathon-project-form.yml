@@ -135,7 +135,7 @@ body:
     id: coc
     attributes:
       label: "Please read and follow the OHBM Code of Conduct"
-      description: Read here [the OHBM Code of Conduct](https://ohbm.github.io/hackathon2023/coc/)
+      description: Read here [the OHBM Code of Conduct](https://ohbm.github.io/hackathon2023/code-of-conduct/)
       options:
         - label: I agree to follow the OHBM Code of Conduct during the hackathon
           required: true
