@@ -6,6 +6,8 @@ import Link from 'next/link';
 import { Bebas_Neue, Roboto, Nothing_You_Could_Do } from 'next/font/google'
 import { useEffect } from 'react';
 
+import OGImage from '../../public/og.png'
+
 import getConfig from 'next/config'
 const {
   publicRuntimeConfig: {
@@ -27,6 +29,12 @@ function Header() {
     <>
       <Head>
         <title>OHBM Hackathon 2023</title>
+        <meta name="description" content="OHBM Hackathon 2023 " key="desc" />
+        <meta property="og:title" content="OHBM Hackathon 2023" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ohbm.github.io/hackathon2023/" />
+        <meta property="og:description" content="Let's get together to learn about open science and to collaborate on neuroscience projects!" />
+        <meta property="og:image" content={OGImage.src} />
       </Head>
       <header className="font-display w-full absolute top-0 left-0 h-fit right-0 justify-center px-1 py-2 bg-dirt text-gold uppercase z-50">
         <div className="flex w-full max-w-screen-xl px-4 mx-auto">

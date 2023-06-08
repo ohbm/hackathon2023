@@ -22,7 +22,7 @@ export default function TeamMember(props: TeamMemberProps) {
     'circle-2': Circle2.src,
   }[props.circle] || Circle1.src;
   return (
-    <div className="text-center" style={props.style}>
+    <div className={`text-center ${props.className ?? ''}`} style={props.style}>
       <div
         className={
           `
