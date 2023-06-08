@@ -8,7 +8,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        *We are very excited to meet you at the 2023 OHBM Brainhack 🎉* *To submit a project, you need to register to 2023 OHBM Brainhack first, please follow [the link](http://www.humanbrainmapping.org/HackathonReg/). Thank you!*
+        *We are very excited to meet you at the 2023 OHBM Brainhack 🎉* *To submit a project, you need to register to 2023 OHBM Brainhack first, please follow [the link](https://www.humanbrainmapping.org/i4a/ams/meetings/index.cfm?controller=meetings&action=startRegistration&conferenceID=146&reginit=1&pageID=4217). Thank you!*
 
         *We have prepared this template to help with your project submission. Please fill the template (at least all 'required' items must be provided) and we will assign a 'project monitor' to follow your submission.
         If at any time you need help or anything is unclear, please add a comment and ping your project monitor.*
@@ -94,17 +94,17 @@ body:
       label: Recommended tutorials for new contributors
       description: We provided [a list of tutorials](https://ohbm.github.io/hackathon2023/traintrack/) that might be helpful for new contributors. Please check all the tutorials that will be useful to work on your project.
       options:
-        - label: "[Set up a brainhack friendly computing environment](https://school.brainhackmtl.org/modules/installation/)"
-        - label: "[A introduction to Bash](https://school.brainhackmtl.org/modules/introduction_to_terminal/)"
-        - label: "[Python: Writing a script](https://school.brainhackmtl.org/modules/python_scripts/)"
-        - label: "[Python: Data analysis with Python](https://school.brainhackmtl.org/modules/python_data_analysis/)"
-        - label: "[Python: Visualisation](https://school.brainhackmtl.org/modules/python_visualization/)"
-        - label: "[Machine learning basics](https://school.brainhackmtl.org/modules/machine_learning_basics/)"
-        - label: "[BIDS](https://school.brainhackmtl.org/modules/bids/)"
-        - label: "[Machine learning for neuroimaging](https://school.brainhackmtl.org/modules/machine_learning_neuroimaging/)"
-        - label: "[VCS: Using Git and Github](https://school.brainhackmtl.org/modules/git_github/)"
-        - label: "[VCS: Data management with Datalad](https://school.brainhackmtl.org/modules/datalad/)"
-        - label: "[Virtualization](https://school.brainhackmtl.org/modules/containers/)"
+        - label: "[Set up a brainhack friendly computing environment](https://school-brainhack.github.io/modules/installation/)"
+        - label: "[A introduction to Bash](https://school-brainhack.github.io/modules/introduction_to_terminal/)"
+        - label: "[Python: Writing a script](https://school-brainhack.github.io/modules/python_scripts/)"
+        - label: "[Python: Data analysis with Python](https://school-brainhack.github.io/modules/python_data_analysis/)"
+        - label: "[Python: Visualisation](https://school-brainhack.github.io/modules/python_visualization/)"
+        - label: "[Machine learning basics](https://school-brainhack.github.io/modules/machine_learning_basics/)"
+        - label: "[BIDS](https://school-brainhack.github.io/modules/bids/)"
+        - label: "[Machine learning for neuroimaging](https://school-brainhack.github.io/modules/machine_learning_neuroimaging/)"
+        - label: "[VCS: Using Git and Github](https://school-brainhack.github.io/modules/git_github/)"
+        - label: "[VCS: Data management with Datalad](https://school-brainhack.github.io/modules/datalad/)"
+        - label: "[Virtualization](https://school-brainhack.github.io/modules/containers/)"
         - label: "High Performance Computing: [Oracle cloud resource](https://brainhack.org/brainhack_cloud/)"
 
   - type: textarea
@@ -135,7 +135,7 @@ body:
     id: coc
     attributes:
       label: "Please read and follow the OHBM Code of Conduct"
-      description: Read here [the OHBM Code of Conduct](https://ohbm.github.io/hackathon2023/coc/)
+      description: Read here [the OHBM Code of Conduct](https://ohbm.github.io/hackathon2023/code-of-conduct/)
       options:
         - label: I agree to follow the OHBM Code of Conduct during the hackathon
           required: true
