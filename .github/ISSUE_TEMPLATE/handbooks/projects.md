@@ -2,7 +2,7 @@
 
 ## Project submission
 
-You can then submit a project [here]([https://github.com/ohbm/hackathon2022/issues/new?assignees=octocat&labels=Hackathon+Project&template=hackathon-project-form.yml&title=%3CMy+Project+Name%3E](https://github.com/ohbm/hackathon2023/issues/new?labels=Hackathon+Project&projects=&template=hackathon-project-form.yml&title=%3CMy+Project+Name%3E)).
+You can then submit a project [here](https://github.com/ohbm/hackathon2023/issues/new?labels=Hackathon+Project&projects=&template=hackathon-project-form.yml&title=%3CMy+Project+Name%3E).
 
 We will ask you to provide some information about your project in order to advertise it and help onboarding new members.
 
