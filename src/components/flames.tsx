@@ -1,5 +1,5 @@
 interface FlamesProps {
-  className?: string | undefined;
+  className?: string | undefined
 }
 
 export default function Flames(props: FlamesProps) {
@@ -13,6 +13,5 @@ export default function Flames(props: FlamesProps) {
         }
       </div>
     </div>
-  );
-
+  )
 }

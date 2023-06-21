@@ -5,13 +5,13 @@ import Circle1 from '../../public/circle-1.png'
 import Circle2 from '../../public/circle-2.png'
 
 interface TeamMemberProps extends React.HTMLProps<HTMLDivElement> {
-  circle: string;
-  name: string;
-  photo: string;
-  place: string;
+  circle: string
+  name: string
+  photo: string
+  place: string
   social?: {
-    twitter?: string;
-    github?: string;
+    twitter?: string
+    github?: string
   }
 }
 
@@ -20,7 +20,7 @@ export default function TeamMember(props: TeamMemberProps) {
     'circle': Circle.src,
     'circle-1': Circle1.src,
     'circle-2': Circle2.src,
-  }[props.circle] || Circle1.src;
+  }[props.circle] || Circle1.src
   return (
     <div className={`text-center ${props.className ?? ''}`} style={props.style}>
       <div

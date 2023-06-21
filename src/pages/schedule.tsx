@@ -5,18 +5,6 @@ export async function getStaticProps() {
 }
 
 export default function Schedule() {
-
-  const range = (start: number, stop: number, step: number): number[] => Array.from({ length: (stop - start) / step + 1}, (_, i) => start + (i * step))
-  const hours = range(8, 18, 0.5)
-  const days = range(12, 14, 1)
-
-  function MinToMMSS(minutes: number): string{
-    var sign = minutes < 0 ? "-" : "";
-    var min = Math.floor(Math.abs(minutes));
-    var sec = Math.floor((Math.abs(minutes) * 60) % 60);
-    return sign + (min < 10 ? "0" : "") + min + ":" + (sec < 10 ? "0" : "") + sec;
-   }
-
   return (
     <main>
       <div className="justify-center items-center">

@@ -10,10 +10,7 @@ export async function getStaticProps() {
 }
 
 function parseCSV(csv: string): {[k: string]: string}[] {
-  const pat = new RegExp(
-    "(\\,|\\r?\\n|\\r|^)(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|([^\"\\,\\r\\n]*))",
-    "gi"
-  );
+  const pat = /(\,|\r?\n|\r|^)(?:"([^"]*(?:""[^"]*)*)"|([^"\,\r\n]*))/gi
   const data: string[][] = [[]]
 
   let m
@@ -36,7 +33,7 @@ function parseCSV(csv: string): {[k: string]: string}[] {
 }
 
 export default function TrainTrack() {
-  const categories = ["Open Access", "Open Data", "Open Code", "Reproducibility", "Research Integrity", "Research Culture"];
+  const categories = ["Open Access", "Open Data", "Open Code", "Reproducibility", "Research Integrity", "Research Culture"]
   const [content, setContent] = useState<{[k: string]: string}[] | null>(null)
   const [tags, setTags] = useState<string[] | null>(null)
   const [selectedContent, setSelectedContent] = useState<{[k: string]: string}[] | null>(null)
@@ -94,7 +91,7 @@ export default function TrainTrack() {
               <span key={t}
                 onClick={() => {
                   if (selectedTags?.includes(t)) {
-                    const reverseSelected = selectedTags.filter(s => s !== t);
+                    const reverseSelected = selectedTags.filter(s => s !== t)
                     setSelectedTags(reverseSelected.length ? reverseSelected : null)
                   } else {
                     setSelectedTags(selectedTags ? [...selectedTags, t] : [t])

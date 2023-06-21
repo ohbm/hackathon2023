@@ -2,9 +2,9 @@ import '@/styles/globals.css'
 import '@/styles/flames.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import Link from 'next/link';
+import Link from 'next/link'
 import { Bebas_Neue, Roboto, Nothing_You_Could_Do } from 'next/font/google'
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
 import OGImage from '../../public/og.png'
 
