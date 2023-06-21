@@ -68,7 +68,7 @@ function Footer() {
           <h2 className="font-display text-3xl mb-0 text-center md:text-left">Organizers</h2>
           <p className="font-theme text-2xl mb-0">Yu-Fang Yang</p>
           <p className="font-theme text-2xl mb-0">Anibal Sólon</p>
-          <p className="text-xl mb-0">ohbmopenscience@gmail.com</p>
+          <p className="text-xl mb-0 pr-6 whitespace-pre-wrap break-words">ohbmopenscience@gmail.com</p>
         </div>
         <nav className="font-primary flex md:gap-6 text-1xl justify-around">
           <div className="flex flex-col gap-1">

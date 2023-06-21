@@ -15,6 +15,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        '3xl':'1920px',
+        '4xl':'2560px',
+      },
       fontFamily: {
         primary: ['var(--roboto-font)', ...fontFamily.sans],
         display: ['var(--bebas-font)', ...fontFamily.serif],
@@ -74,6 +78,15 @@ module.exports = {
       },
       dropShadow: {
         opaque: ['0 0px 13px rgb(0 0 0)', '0 -5px 5px rgb(0 0 0)'],
+      },
+      animation: {
+        'fade': 'fadein 0.5s normal forwards ease-in-out',
+      },
+      keyframes: {
+        fadein: {
+          '0%': { opacity: 0 },
+          '100%': { opacity: 1 },
+        },
       },
     },
   },

@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import { Bebas_Neue } from 'next/font/google'
 import UnderConstruction from '../../public/under-construction.png'
 
 import getConfig from 'next/config'
@@ -10,23 +9,23 @@ const {
   }
 } = getConfig()
 
-const bebas = Bebas_Neue({ weight: '400', subsets: ['latin'] })
-
 export async function getStaticProps() {
   return { props: { bodyClassName: 'jungle no-jungle' } }
 }
 
 export default function HackTrack() {
   return (
-    <main className="fog">
+    <main className={`
+      relative fog
+      after:absolute after:-z-20 after:content-[''] after:bottom-0 after:left-0 after:right-0 after:inset-3/4
+      after:bg-deep-sea after:bg-cover after:from-transparent after:to-sand after:bg-top-3px
+    `}>
       <div className={`
         flex flex-col gap-8 items-center justify-center flex-grow
         relative min-h-screen p-12 py-16 md:p-16 lg:p-32 md:pb-64 md:pt-64
-        after:absolute after:-z-20 after:content-[''] after:bottom-0 after:left-0 after:right-0 after:inset-3/4
-        after:bg-deep-sea after:bg-top-3px after:bg-cover after:from-transparent after:to-sand
       `}>
         <div className="max-w-4xl">
-          <h2 className={`${bebas.className} mb-5 text-7xl font-semibold`}>
+          <h2>
             Hacktrack
           </h2>
           <p className="text-lg">The HackTrack is the official fun side of a Brainhack event, where people can work together on projects. What projects? Any kind! From exploding brains to resource gathering and data sharing!</p>

@@ -80,6 +80,12 @@ html {
     }
 }
 
+@screen 2xl {
+    html {
+        font-size: 32px;
+    }
+}
+
 body {
     color: rgb(var(--foreground-rgb));
     background-color: rgb(var(--background-rgb));
@@ -106,15 +112,15 @@ main {
     position: relative;
 }
 
-main>*:first-child {
+main > *:first-child {
     @apply pt-16
 }
 
-main>*:last-child {
+main > *:last-child {
     @apply pb-16
 }
 
-main * {
+main > * {
     opacity: 0;
     animation: 0.5s ease-out 1s fade-in;
     animation-fill-mode: forwards;
@@ -134,7 +140,8 @@ main * {
     background-size: auto 100%; */
 
     background-color: #F9F4E9;
-    background-image: url(../../public/jungle-l.png),
+    background-image:
+        url(../../public/jungle-l.png),
         url(../../public/jungle-r.png),
         linear-gradient(160deg, #091517 0%, #261d0d 100%);
 
@@ -157,8 +164,8 @@ main * {
     background-position: -100vmax center, 100vmax top, center bottom;
 }
 
-.jungle.fade-jungle main *,
-.jungle.no-jungle main * {
+.jungle.fade-jungle main > *,
+.jungle.no-jungle main > * {
     opacity: 0;
     animation: 0.5s ease-out 0.5s fade-in;
     animation-fill-mode: forwards;
@@ -208,7 +215,7 @@ main * {
 
 .fog {
     background-image: url(../../public/fog.png);
-    background-position: center center;
+    background-position: top center;
     background-repeat: repeat;
 }
 
