@@ -5,6 +5,13 @@ import { SiMattermost } from 'react-icons/si'
 import { FaMapMarkerAlt } from 'react-icons/fa'
 import GoldenBrain from '../../public/golden-brain.png'
 import BrainMap from '../../public/brain-map.png'
+import Link from 'next/link'
+
+import OpenNeuroLogo from '../../public/sponsors/openneuro.svg'
+import CNeuroModLogo from '../../public/sponsors/cneuromod.svg'
+import CONPLogo from '../../public/sponsors/conp.svg'
+import ChildMindInstituteLogo from '../../public/sponsors/childmindinstitute.svg'
+import TReNDSLogo from '../../public/sponsors/trends.svg'
 
 import getConfig from 'next/config'
 const {
@@ -111,6 +118,17 @@ export default function Home() {
             <p className="mb-6">The OHBM Brainhack 2022 will be a 3-day hybrid event with both in-person and virtual options from June 16th to 18th. The in-person event will be in Queen Margaret Union 22 University Gardens, Glasgow. The virtual event will be held in Discord.</p>
             <p className="mb-6">We look for neuroimagers of all modalities from all over the world at different career stages, and coming from all racial and gender backgrounds who are interested in working together with others to build an open science community. If you're new to the Brainhack community, please join us! If you belong to any minority groups we want to reiterate that we want you here and are excited to have you join us!</p> */}
           </div>
+        </div>
+      </div>
+      <div className="jungle-solo flex items-center py-10">
+        <h2 className={`${bebas.className} mb-2 text-6xl font-semibold text-gold`}>Sponsors</h2>
+        <div className="flex flex-wrap items-center justify-center">
+          <Link className="mx-20 lg:w-1/5 m-5" href="https://openneuro.org/"><Image src={OpenNeuroLogo} alt="OpenNeuro" /></Link>
+          {/* <Image className="mx-20 lg:w-1/5 m-5" src={OpenNeuroLogo} alt="NiPreps" /> */}
+          <Link className="mx-20 lg:w-1/5 m-5" href="https://www.cneuromod.ca/"><Image src={CNeuroModLogo} alt="CNeuroMod" /></Link>
+          <Link className="mx-20 lg:w-1/5 m-5" href="https://childmind.org/"><Image src={ChildMindInstituteLogo} alt="Child Mind Institute" /></Link>
+          <Link className="mx-20 lg:w-1/5 m-5" href="https://conp.ca/"><Image src={CONPLogo} alt="Canadian Open Neuroscience Platform" /></Link>
+          <Link className="mx-20 lg:w-1/5 m-5" href="https://trendscenter.org/"><Image src={TReNDSLogo} alt="Translational Research in Neuroimaging & Data Science" /></Link>
         </div>
       </div>
       <div className="map relative min-h-3/5 md:min-h-3/5 z-50">

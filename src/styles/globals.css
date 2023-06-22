@@ -145,7 +145,7 @@ main > * {
         url(../../public/jungle-r.png),
         linear-gradient(160deg, #091517 0%, #261d0d 100%);
 
-    background-repeat: no-repeat, no-repeat;
+    background-repeat: no-repeat, no-repeat, no-repeat;
     background-size: auto 100%, auto 100%, 100% 0%;
     background-position: -10vmax center, 50vmax top, center bottom;
     transition: background-size 1s ease-in-out 0.25s, background-position 1s ease-in-out, background-color 1s ease-in-out;
@@ -183,6 +183,18 @@ main > * {
 
 .jungle.fixed-jungle main:before {
     position: fixed;
+}
+
+.jungle-solo {
+    background-color: #F9F4E9;
+    background-image:
+        url(../../public/jungle-l.png),
+        url(../../public/jungle-r.png),
+        linear-gradient(160deg, #010101 0%, #010101 100%);
+    background-size: auto 100%, auto 100%, 100% 100%;
+    background-position: left center, right top, center bottom;
+    background-attachment: fixed;
+    background-repeat: no-repeat, no-repeat, no-repeat;
 }
 
 .dirt {
