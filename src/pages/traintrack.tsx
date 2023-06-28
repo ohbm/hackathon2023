@@ -131,7 +131,7 @@ export default function TrainTrack() {
 
                             l.includes("douyu") ?
 
-                              <a key={i} href={d.Douyu}>
+                              <a key={i} href={l}>
                                 <Image
                                   priority
                                   src={DouyuIcon}
@@ -140,7 +140,7 @@ export default function TrainTrack() {
                                 />
                               </a> :
 
-                              <a key={i} href={d.Link}>
+                              <a key={i} href={l}>
                                 <BsGlobe2 className="inline-block mr-1 text-4xl" />
                               </a>
 
