@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { BsYoutube } from 'react-icons/bs'
+import { BsGlobe2, BsYoutube } from 'react-icons/bs'
 
 import DouyuIcon from '../../public/douyu.svg'
 import UnderConstruction from '../../public/under-construction-2.png'
@@ -33,20 +33,19 @@ function parseCSV(csv: string): {[k: string]: string}[] {
 }
 
 export default function TrainTrack() {
-  const categories = ["Open Access", "Open Data", "Open Code", "Reproducibility", "Research Integrity", "Research Culture"]
   const [content, setContent] = useState<{[k: string]: string}[] | null>(null)
   const [tags, setTags] = useState<string[] | null>(null)
   const [selectedContent, setSelectedContent] = useState<{[k: string]: string}[] | null>(null)
   const [selectedTags, setSelectedTags] = useState<string[] | null>(null)
 
   useEffect(() => {
-    fetch('https://raw.githubusercontent.com/ohbm/osr2023/main/_data/educational.csv')
+    fetch('https://docs.google.com/spreadsheets/d/1NkirhOcphgcATs43H36HD2Xqx3lFhEIOi2Zk-8NLXq0/export?format=csv')
       .then(res => res.text())
       .then(parseCSV)
       .then((data: {[k: string]: string}[]) => {
         const tags = new Set<string>()
         data.forEach(d => {
-          d.Tags.split(',').forEach(t => tags.add(t.trim()))
+          d.Tags.split(';').forEach(t => tags.add(t.trim()))
         })
         setTags(Array.from(tags))
         setContent(data)
@@ -112,51 +111,51 @@ export default function TrainTrack() {
             ))}
           </p>
 
-          {
-            categories.map(c =>
-              selectedContent?.filter(d => d.Tags.includes(c)).length ? (
-                <div key={c} className="mb-8 ml-4 animate-fade">
-                  <h3 className="text-3xl font-semibold mb-4">{c}</h3>
-                  <ul className="list-none flex justify-stretch items-stretch flex-wrap">
-                    {
-                      selectedContent?.filter(d => d.Tags.includes(c)).map(d => (
-                        <li key={d.Name} className="m-0 list-none w-full lg:w-1/3 flex">
-                          <div className="w-full mr-4 mb-4 p-4 bg-white">
-                            <h4 className="text-xl font-bold"><a href={d.Link}>{d.Name}</a></h4>
-                            <p>{d.Description}</p>
-                            <div className="p-3 flex justify-center gap-4">
-                              {
-                                d.Link && d.Link.includes("youtu") &&
-                                <a href={d.Link}>
-                                  <BsYoutube className="inline-block mr-1 text-4xl" />
-                                </a>
-                              }
-                              {
-                                d.Douyu &&
-                                <a href={d.Douyu}>
-                                  <Image
-                                    priority
-                                    src={DouyuIcon}
-                                    className="inline-block mr-1 w-10"
-                                    alt="Douyu"
-                                  />
-                                </a>
-                              }
-                            </div>
-                          </div>
-                        </li>
-                      ))
-                    }
-                  </ul>
-                </div>
-              ) : null
-            )
-          }
+          <div className="mb-8 ml-4 animate-fade">
+            <ul className="list-none flex justify-stretch items-stretch flex-wrap">
+              {
+                selectedContent?.map(d => (
+                  <li key={d.Name} className="m-0 list-none w-full lg:w-1/3 flex">
+                    <div className="w-full mr-4 mb-4 p-4 bg-white">
+                      <h4 className="text-xl font-bold"><a href={d.Link}>{d.Name}</a></h4>
+                      <p>{d.Description}</p>
+                      <div className="p-3 flex justify-center gap-4">
+                        {
+                          d.Links && d.Links.split(';').map(l => l.trim()).map((l, i) => (
+
+                            l.includes("youtu") ?
+
+                              <a key={i} href={l}>
+                                <BsYoutube className="inline-block mr-1 text-4xl" />
+                              </a> :
+
+                            l.includes("douyu") ?
+
+                              <a key={i} href={d.Douyu}>
+                                <Image
+                                  priority
+                                  src={DouyuIcon}
+                                  className="inline-block mr-1 w-10"
+                                  alt="Douyu"
+                                />
+                              </a> :
+
+                              <a key={i} href={d.Link}>
+                                <BsGlobe2 className="inline-block mr-1 text-4xl" />
+                              </a>
+
+                          ))
+                        }
+                      </div>
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
 
           {
-            selectedContent !== null && !categories.some(c =>
-              selectedContent?.filter(d => d.Tags.includes(c)).length
-            ) ? (
+            selectedContent !== null ? (
               <div className="text-center font-2xl text-bold m-16">
                 No results found.
               </div>
