@@ -155,7 +155,7 @@ export default function TrainTrack() {
           </div>
 
           {
-            selectedContent !== null ? (
+            selectedContent !== null && selectedContent.length === 0 ? (
               <div className="text-center font-2xl text-bold m-16">
                 No results found.
               </div>
