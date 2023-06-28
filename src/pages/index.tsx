@@ -12,6 +12,7 @@ import CNeuroModLogo from '../../public/sponsors/cneuromod.svg'
 import CONPLogo from '../../public/sponsors/conp.svg'
 import ChildMindInstituteLogo from '../../public/sponsors/childmindinstitute.svg'
 import TReNDSLogo from '../../public/sponsors/trends.svg'
+import BidsConnectivityLogo from '../../public/sponsors/bids-connectivity.svg'
 
 import getConfig from 'next/config'
 const {
@@ -129,6 +130,7 @@ export default function Home() {
           <Link className="mx-20 lg:w-1/5 m-5" href="https://childmind.org/"><Image src={ChildMindInstituteLogo} alt="Child Mind Institute" /></Link>
           <Link className="mx-20 lg:w-1/5 m-5" href="https://conp.ca/"><Image src={CONPLogo} alt="Canadian Open Neuroscience Platform" /></Link>
           <Link className="mx-20 lg:w-1/5 m-5" href="https://trendscenter.org/"><Image src={TReNDSLogo} alt="Translational Research in Neuroimaging & Data Science" /></Link>
+          <Link className="mx-20 lg:w-1/5 m-5" href="https://pestillilab.github.io/bids-connectivity/"><Image src={BidsConnectivityLogo} alt="BIDS Connectivity" /></Link>
         </div>
       </div>
       <div className="map relative min-h-3/5 md:min-h-3/5 z-50">
