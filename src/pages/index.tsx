@@ -50,7 +50,7 @@ export default function Home() {
           relative max-w-6xl text-center
           grid grid-cols-1 md:grid-cols-2 flex-grow
         `}>
-          <div className="absolute top-0 p-2 bg-jungle text-white text-left text-sm">
+          <div className="md:absolute top-0 p-2 bg-jungle text-white text-left text-sm">
             <p className="font-bold m-0">COVID-19 notice</p>
             <p className="m-0">
               The Hackathon&apos;s policy aligns with local guidelines.
@@ -60,20 +60,24 @@ export default function Home() {
             </p>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <h2 className={`${bebas.className} mb-3 font-semibold  md:text-6xl`}>
-              OHBM<br/>Brainhack <span className="block md:text-9xl">2023</span>
-            </h2>
+            <div className="flex flex-row md:flex-col items-center justify-center">
+              <h2 className={`${bebas.className} mb-3 font-semibold  md:text-6xl mr-10 md:mr-0`}>
+                OHBM<br/>Brainhack <span className="block md:text-9xl">2023</span>
+              </h2>
 
-            <div className={`${bebas.className} text-xl md:text-xl lg:text-xl bg-sand-dark text-sand p-2 text-center`}>
-              July 19-21, 2023
-            </div>
-            <div className="grid grid-cols-2 md:flex md:items-stretch gap-2 pt-2">
-              <a className="bg-sand-dark text-sand font-bold py-2 px-4" href={REGISTRATION_URL}>
-                Register
-              </a>
-              <a className="bg-sand-dark text-sand font-bold py-2 px-4" href={PROJECTS_SUBMISSION_URL}>
-                Submit
-              </a>
+              <div className="flex flex-col items-center justify-center">
+                <div className={`${bebas.className} text-xl md:text-xl lg:text-xl bg-sand-dark text-sand p-2 text-center`}>
+                  July 19-21, 2023
+                </div>
+                <div className="grid grid-cols-2 md:flex md:items-stretch gap-2 pt-2">
+                  <a className="bg-sand-dark text-sand font-bold py-2 px-4" href={REGISTRATION_URL}>
+                    Register
+                  </a>
+                  <a className="bg-sand-dark text-sand font-bold py-2 px-4" href={PROJECTS_SUBMISSION_URL}>
+                    Submit
+                  </a>
+                </div>
+              </div>
             </div>
             <div className="text-sand text-4xl md:text-6xl flex gap-4 md:gap-10 mt-8 md:pt-20 pb-0">
               <a href={DISCORD_URL}><BsDiscord className="filter drop-shadow-opaque" /></a>

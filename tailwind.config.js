@@ -16,8 +16,16 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        '3xl':'1920px',
-        '4xl':'2560px',
+        '3xl': '1740px',
+        '4xl': '1971px',
+        '5xl': '2201px',
+        '6xl': '2432px',
+        '7xl': '2662px',
+        '8xl': '2892px',
+        '9xl': '3123px',
+        '10xl': '3353px',
+        '11xl': '3584px',
+        '12xl': '3840px',
       },
       fontFamily: {
         primary: ['var(--roboto-font)', ...fontFamily.sans],

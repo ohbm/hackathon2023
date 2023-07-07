@@ -65,26 +65,26 @@
 }
 
 html {
-    font-size: 14px;
+    font-size: calc(max(1vmax, 14px));
 }
 
-@screen md {
-    html {
-        font-size: 16px;
-    }
-}
+// @screen md {
+//     html {
+//         font-size: 16px;
+//     }
+// }
 
-@screen lg {
-    html {
-        font-size: 18px;
-    }
-}
+// @screen lg {
+//     html {
+//         font-size: 18px;
+//     }
+// }
 
-@screen 2xl {
-    html {
-        font-size: 32px;
-    }
-}
+// @screen 2xl {
+//     html {
+//         font-size: 16px;
+//     }
+// }
 
 body {
     color: rgb(var(--foreground-rgb));
