@@ -1,0 +1,4 @@
+discord.py
+pyyaml
+python-dotenv
+pytz

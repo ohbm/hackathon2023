@@ -4,23 +4,35 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+  issues:
+    types:
+      - edited
+      - labeled
 
 permissions:
   contents: read
   pages: write
   id-token: write
+  issues: write
 
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - run: pip install -r requirements.txt
+
+      - name: Fetching projects from GitHub
+        run: python scripts/fetch_gh_issues.py
+        env:
+          GH_AUTH: ${{ secrets.GH_AUTH }}
+
       - name: Detect package manager
         id: detect-package-manager
         run: |
