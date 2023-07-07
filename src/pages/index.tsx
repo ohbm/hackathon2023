@@ -44,12 +44,21 @@ export default function Home() {
     <main>
       <div className={`
         p-12 md:p-10 lg:p-12 lg:pt-18 min-h-full lg:min-h-screen lg:max-h-screen
-        flex justify-center items-center flex-grow
+        flex justify-center items-center flex-grow relative
       `}>
         <div className={`
           relative max-w-6xl text-center
           grid grid-cols-1 md:grid-cols-2 flex-grow
         `}>
+          <div className="absolute top-0 p-2 bg-jungle text-white text-left text-sm">
+            <p className="font-bold m-0">COVID-19 notice</p>
+            <p className="m-0">
+              The Hackathon's policy aligns with local guidelines.
+              Currently, proof of vaccination is not required, and while masks are strongly encouraged, they are not mandatory.
+              If local guidelines change, the Hackathon will adapt its policy accordingly.
+              Masks will be available for attendees.
+            </p>
+          </div>
           <div className="flex flex-col items-center justify-center">
             <h2 className={`${bebas.className} mb-3 font-semibold  md:text-6xl`}>
               OHBM<br/>Brainhack <span className="block md:text-9xl">2023</span>
