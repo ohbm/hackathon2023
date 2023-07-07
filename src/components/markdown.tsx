@@ -1,7 +1,8 @@
 import React from 'react'
 import { unified } from 'unified'
-import parse from 'remark-parse'
-import html from 'remark-html'
+import remarkParse from 'remark-parse'
+import remarkRehype from 'remark-rehype'
+import rehypeStringify from 'rehype-stringify'
 import { useEffect, useState } from 'react'
 
 export default function Markdown({ markdown, className, ...props }: { markdown: string } & React.HTMLProps<HTMLDivElement>) {
@@ -9,8 +10,9 @@ export default function Markdown({ markdown, className, ...props }: { markdown: 
 
   useEffect(() => {
     unified()
-      .use(parse, { gfm: true })
-      .use(html, {sanitize: true})
+      .use(remarkParse)
+      .use(remarkRehype)
+      .use(rehypeStringify)
       .process(markdown)
       .then(f => setResult(f.toString()))
   }, [markdown])

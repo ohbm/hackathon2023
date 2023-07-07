@@ -21,9 +21,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-    "remark-html": "^15.0.2",
+    "rehype-stringify": "^9.0.3",
     "remark-parse": "^10.0.2",
+    "remark-rehype": "^10.1.0",
     "sass": "^1.62.1",
+    "sharp": "^0.32.1",
     "tailwindcss": "3.3.1",
     "typescript": "5.0.4",
     "unified": "^10.1.2"

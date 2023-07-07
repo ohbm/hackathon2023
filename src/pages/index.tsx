@@ -53,7 +53,7 @@ export default function Home() {
           <div className="absolute top-0 p-2 bg-jungle text-white text-left text-sm">
             <p className="font-bold m-0">COVID-19 notice</p>
             <p className="m-0">
-              The Hackathon's policy aligns with local guidelines.
+              The Hackathon&apos;s policy aligns with local guidelines.
               Currently, proof of vaccination is not required, and while masks are strongly encouraged, they are not mandatory.
               If local guidelines change, the Hackathon will adapt its policy accordingly.
               Masks will be available for attendees.
