@@ -1,4 +1,4 @@
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
 import '@/styles/flames.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
@@ -16,7 +16,6 @@ const {
     MATTERMOST_URL,
     GITHUB_URL,
     OSSIG_URL,
-    MAPS_URL,
   }
 } = getConfig()
 
@@ -29,6 +28,7 @@ function Header() {
     <>
       <Head>
         <title>OHBM Hackathon 2023</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="OHBM Hackathon 2023 " key="desc" />
         <meta property="og:title" content="OHBM Hackathon 2023" />
         <meta property="og:type" content="website" />

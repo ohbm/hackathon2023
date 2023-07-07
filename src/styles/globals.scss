@@ -330,3 +330,15 @@ main > * {
             2.333px 0 0 var(--tw-shadow-color), 2.666px 0 0 var(--tw-shadow-color), 3px solid var(--tw-shadow-color);
     }
 }
+
+.markdown {
+
+}
+
+.markdown {
+    h1, h2, h3, h4, h5, h6 {
+        text-align: left;
+        margin-top: 5%;
+        word-break: break-all;
+    }
+}

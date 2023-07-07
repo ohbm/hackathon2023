@@ -1,7 +1,11 @@
+import fs from 'fs'
+import path from 'path'
 import Image from 'next/image'
 import UnderConstruction from '../../public/under-construction.png'
-
 import getConfig from 'next/config'
+
+import Markdown from '@/components/markdown'
+
 const {
   publicRuntimeConfig: {
     REGISTRATION_URL,
@@ -9,11 +13,21 @@ const {
   }
 } = getConfig()
 
-export async function getStaticProps() {
-  return { props: { bodyClassName: 'jungle no-jungle' } }
+type Project = {
+  title: string,
+  goals: string,
+  issue_link: string,
+  issue_number: number,
 }
 
-export default function HackTrack() {
+export async function getStaticProps() {
+  const fullPath = path.join('public', `projects.json`);
+  const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const projects = JSON.parse(fileContents) as Project[];
+  return { props: { bodyClassName: 'jungle no-jungle', projects } }
+}
+
+export default function HackTrack({ projects }: { projects: Project[] }) {
   return (
     <main className={`
       relative fog
@@ -35,6 +49,31 @@ export default function HackTrack() {
               Submit your project now!
             </a>
           </div>
+
+          <div className="mb-8 ml-4 animate-fade">
+            <ul className="list-none flex justify-stretch items-stretch flex-wrap">
+              {
+                projects?.map(p => (
+                  <li key={p.issue_number} className="m-0 list-none w-full lg:w-1/2 flex">
+                    <div className="w-full mr-4 mb-4 p-4 bg-white">
+                      <h1 className="text-xl font-bold bg-gold p-2"><a href={p.issue_link}>{p.title}</a></h1>
+                      <Markdown tabIndex={0} markdown={p.goals}
+                        className={`
+                          max-h-96 overflow-auto
+                        `}
+                        // className={` Optional show more on focus
+                        //   max-h-72 overflow-hidden relative cursor-pointer grow
+                        //   after:bg-gradient-to-b after:from-transparent after:to-white after:absolute after:bottom-0 after:left-0 after:right-0 after:h-32 after:content-['']
+                        //   focus-within:max-h-none focus-within:after:h-0
+                        // `}
+                      />
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
           <div className="`text-center max-w-2xl mt-6 mx-auto">
             <Image
               className="object-contain md:max-h-3/4 lg:max-h-3/4 xl:max-h-3/4 !relative"
