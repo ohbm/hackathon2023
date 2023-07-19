@@ -31,68 +31,72 @@ def fetch_gh_issues():
         if issue["state"] != "open":
             continue
 
-        body = issue["body"]
-        lines = [l.strip() for l in body.replace('\r\n', '\n').split('\n')]
+        try:
 
-        field_ordering = []
-        for field in fields:
-            field_start = None
-            field_label = field['attributes']['label']
+            body = issue["body"]
+            lines = [l.strip() for l in body.replace('\r\n', '\n').split('\n')]
 
-            for li, line in enumerate(lines):
-                is_line_title = line.startswith(f'### {field_label}')
-                if field_start is None and is_line_title:
-                    field_start = li
+            field_ordering = []
+            for field in fields:
+                field_start = None
+                field_label = field['attributes']['label']
 
-            field_ordering += [(field, field_start)]
-        field_ordering = list(sorted(field_ordering, key=lambda f: f[1]))
+                for li, line in enumerate(lines):
+                    is_line_title = line.startswith(f'### {field_label}')
+                    if field_start is None and is_line_title:
+                        field_start = li
 
-        issue_info = {}
+                field_ordering += [(field, field_start)]
+            field_ordering = list(sorted(field_ordering, key=lambda f: f[1]))
 
-        field_bounds = zip(field_ordering, field_ordering[1:] + [(None, None)])
-        for (field, i), (_, ni) in field_bounds:
-            field_id = field['id']
-            field_label = field['attributes']['label']
+            issue_info = {}
 
-            if i is None:
-                issue_info[field_id] = None
-                continue
+            field_bounds = zip(field_ordering, field_ordering[1:] + [(None, None)])
+            for (field, i), (_, ni) in field_bounds:
+                field_id = field['id']
+                field_label = field['attributes']['label']
 
-            field_value = '\n'.join(filter(None, lines[i+1:ni]))
-            field_value = re.sub(
-                r'<!--.*?-->', '', field_value,
-                flags=re.DOTALL
-            )
-            field_value = field_value.strip()
+                if i is None:
+                    issue_info[field_id] = None
+                    continue
 
-            if field_value == '_No response_':
-                field_value = None
+                field_value = '\n'.join(filter(None, lines[i+1:ni]))
+                field_value = re.sub(
+                    r'<!--.*?-->', '', field_value,
+                    flags=re.DOTALL
+                )
+                field_value = field_value.strip()
 
-            if field['type'] == 'checkboxes':
-                field_options_labels = [
-                    o['label'].strip()
-                    for o in field['attributes']['options']
-                ]
-                field_selected_options = []
-                field_options_value = field_value.split('\n')
-                for l in field_options_value:
-                    if l[6:] not in field_options_labels:
-                        continue
-                    if l.startswith('- [X] '):
-                        field_selected_options.append(l[6:])
-                    if l.startswith('- [x] '):
-                        field_selected_options.append(l[6:])
+                if field_value == '_No response_':
+                    field_value = None
 
-                field_value = field_selected_options
+                if field['type'] == 'checkboxes':
+                    field_options_labels = [
+                        o['label'].strip()
+                        for o in field['attributes']['options']
+                    ]
+                    field_selected_options = []
+                    field_options_value = field_value.split('\n')
+                    for l in field_options_value:
+                        if l[6:] not in field_options_labels:
+                            continue
+                        if l.startswith('- [X] '):
+                            field_selected_options.append(l[6:])
+                        if l.startswith('- [x] '):
+                            field_selected_options.append(l[6:])
 
-            issue_info[field_id] = field_value
+                    field_value = field_selected_options
 
-        if issue_info['hub'] in issue_info['otherhub']:
-            issue_info['otherhub'].remove(issue_info['hub'])
+                issue_info[field_id] = field_value
 
-        issue_info['issue_link'] = issue["html_url"]
-        issue_info['issue_number'] = issue["number"]
-        issues_list.append(issue_info)
+            if issue_info['hub'] in issue_info['otherhub']:
+                issue_info['otherhub'].remove(issue_info['hub'])
+
+            issue_info['issue_link'] = issue["html_url"]
+            issue_info['issue_number'] = issue["number"]
+            issues_list.append(issue_info)
+        except:
+            pass
 
     with open('./public/projects.json', 'w') as f:
         json.dump(issues_list, f, indent=2)
