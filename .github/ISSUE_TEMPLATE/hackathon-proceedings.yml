@@ -1,0 +1,39 @@
+name: Project Summary
+description: Project Summary
+labels:
+  - Proceedings
+assignees:
+  - anibalsolon
+  - ufangYang
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+    validations:
+      required: true
+  - type: textarea
+    id: authors
+    attributes:
+      label: Authors
+      description: A list of authors and their e-mails.
+      placeholder: One author per line, using the format "Author <e-mail>"
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: Supports markdown, up to 500 words.
+      placeholder: |
+        # Introduction
+        ...
+        # Results
+        ...
+    validations:
+      required: true
+  - type: textarea
+    id: references
+    attributes:
+      label: References (Bibtex)
+      description: References in the Bibtex format.
