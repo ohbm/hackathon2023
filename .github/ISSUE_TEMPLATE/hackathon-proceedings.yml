@@ -9,7 +9,7 @@ body:
   - type: markdown
     attributes:
       value: >-
-        Please add images in the comments, once you created the issue. Add a
+        Please add images in the summary field or via comments on the issue. Add a
         caption of up to 250 characters.
   - type: textarea
     id: authors
