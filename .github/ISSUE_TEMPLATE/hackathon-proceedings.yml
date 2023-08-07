@@ -6,12 +6,6 @@ assignees:
   - anibalsolon
   - ufangYang
 body:
-  - type: input
-    id: title
-    attributes:
-      label: Title
-    validations:
-      required: true
   - type: textarea
     id: authors
     attributes:
