@@ -134,7 +134,7 @@ export default function Schedule() {
             size={2}
             name="Beau Haugen"
             photo={BeauHaugen.src}
-            place="Minneapolis, United States"
+            place="Minneapolis, USA"
             social={{
               twitter: "OHBM",
             }}
