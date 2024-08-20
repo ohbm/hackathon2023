@@ -1,6 +1,8 @@
 \documentclass{article}
-\usepackage{markdown}
 \usepackage{graphicx}
+\usepackage{soul,xcolor}
+
+\newcommand\coordinator[1]{\begin{flushleft}\small\textit{#1}\end{flushleft}}
 
 \title{Proceedings of the OHBM Hackathon 2023}
 \author{Yu-Fang Yang, Anibal Sólon Heinsfeld}
@@ -12,22 +14,29 @@
 
 \section{Introduction}
 
-Following the previous editions, the Organization for Human Brain Mapping (OHBM) 2023 embraced a hybrid format, underscoring our commitment to diversity, inclusion, and equitable access.
-This approach is also aimed at reducing the carbon footprint and addressing barriers such as visa issues, enabling broader participation from the global neuroscience community.
-The OHBM Brainhack is a hackathon to the main OHBM meeting, where neuroscientists of various expertise levels and academic interests convene to collaborate in a dynamic, hackathon-style environment.
-These collaborations focus on shared interests from any participant and foster a culture of open science.
-The OHBM Brainhack 2023 was rooted in three core principles.
-First, it aimed to provide an inclusive collaborative space for interdisciplinary interaction among scientists at all career stages.
-This aspect was embodied in the “Hack-Track,” where participants worked together to advance significant projects needing community support.
-Second, the event emphasised empowering scientists to enhance their research quality through hands-on training in open-science practices, a goal realised in the “Train-Track.” Lastly, introducing a buddy system was a novel feature for this edition of the OHBM Brainhack.
-This system paired newcomers with experienced mentors, offering guidance and support to first-time participants, ensuring a welcoming and enriching experience for all.
-In the following sections, we delve into the specifics of the Hack-Track and Train-Track of OHBM 2023 Brainhack, detailing the proceedings and highlighting the key outcomes and advancements made during the event.
+The OHBM Brainhack is a satellite hackathon of the Organization for Human Brain Mapping (OHBM) annual meeting where neuroscientists of various expertise levels and academic interests convene to collaborate in a dynamic hackathon-style environment.
+These collaborations focus on the shared interests of participants and foster a culture of open science aligned with the mission of the Open Science Special Interest Group (OSSIG).
+OHBM Brainhack 2023 was designed with three core principles in mind: 1) to provide an inclusive, equitable, and collaborative space for interdisciplinary interaction among scientists at all career stages; 2) to empower scientists to enhance their research quality through hands-on training, and 3) provide researchers opportunity to propose and work on innovative projects.
+In response to the feedback and building on previous editions \cite{Moia2024}, the OHBM Brainhack 2023 continued to be proposed in a hybrid format/to reduce the carbon footprint and address barriers such as lack of funding or visa issues, emphasizing organizers’ commitment to improving diversity, inclusion, and equitable access by enabling broader participation from the global neuroscience community.
+The following sections detail the Hack-Track, Train-Track, and Buddy System of the OHBM 2023 Brainhack.
 
-\subsection{Train-Track}
+\section{Train-Track}
+\coordinator{Andrea Gondová}
 
-The 2023 edition of the OHBM Brainhack continues its educational mission with the Train-Track, offering a diverse range of fundamental courses such as “Introduction to Jupyter Notebook” and “Basics of Writing Good Code”, along with cutting-edge topics like “Container for Science” and “Data Management with Datalad.”
-This initiative enriches participants' learning experiences by fostering a study group-like environment, augmented by our buddy system that promotes peer-to-peer learning and collaboration.
-Additionally, we introduced onsite sign-ups for mentor-mentee pairings in specific topics, further encouraging group formation among attendees with shared learning goals and facilitating networking opportunities.
+The Train-Track was an educational track aiming to create a supportive space for knowledge exchange and to allow participants enhance their hacking skills and knowledge through structured and unstructured study sessions.
+Suggested training materials ranged across diverse topics including coding skills, good coding and research practices, and machine learning and consisted of tutorials and/or pre-recorded videos largely provided by the BrainHack School (interested readers, see \hl{Table 1x} for list of training materials with links).
+Additionally, participants were encouraged to customize their learning experience by self-organizing study group-like learning sessions for attendees with shared learning goals.
+And onsite sign-ups were opened for mentor-mentee pairings to enhance learning of specific (and advanced) topics and networking opportunities.
+Participants were encouraged to use various communication platforms, including in-person interactions and Discord channels, to foster this collaborative learning process. 
+
+Out of 31 respondents to the post-hackathon survey, 23\% took part in Train-Track sessions focused on learning coding, machine learning, version control, and coding best practices.
+Among these, “Good practices” were the most recommended Train-Track topic.
+The remaining respondents either concentrated exclusively on the Hack-Track or were unaware of the Train-Track and its goals.
+Feedback highlighted a desire for more structured planning and organization in Train-Track, such as structured sessions and prompts, to enhance the experience.
+Organizers recognize that increased structure could improve accessibility and participation and are keen to support attendees to lead more traditional training sessions.
+However, Train-Track is intended for dynamic, flexible, community-driven learning, offering suggested materials for inspiration rather than strict learning guidelines.
+The intention is to give participants space to shape their learning journey dynamically while benefiting from the expertise of other attendees.
+Future improvements should include clearer introduction to Train-Track at the event's start, encouraging participants to express early interest in different topics, and ongoing discussions to refine the section’s structure and objectives.
 
 The collaborative setting of Train-Track allowed participants to engage with like-minded peers, creating a supportive space for knowledge exchange and skill development.
 Course topics were carefully selected based on submitted projects, primarily utilising Python, Git, and GitHub.
@@ -36,35 +45,93 @@ Notably, these courses were pre recorded and made available on YouTube by the OH
 Participants were encouraged to use various communication platforms, including in-person interactions and digital channels like Discord, to foster this collaborative learning process.
 The Train-Track segment at OHBM Brainhack 2023 truly embodied the spirit of community and collective growth.
 
+\section{Buddy System}
+\coordinator{Sina Mansour L.}
 
-\subsection{Buddy System}
+The Buddy System was established to support and engage newcomers at the Hackathon.
+This initiative pairs participants in a mentor-mentee fashion, with mentors guiding interests, projects to join, and networking opportunities throughout the Hackathon.
+Introduced in the previous 2022 edition, the system was refined for 2023 to create a more dynamic and natural community structure \hl{(see Figure X)}.
+Pairs were given the freedom to choose their buddies to avoid any biases in matching, ensuring a fair and supportive environment for all participants.
+In doing so, first-time attendees and more experienced brainhackers were encouraged to network and get to know each other while also sharing information about what to expect from the brainhack.
+This system has been instrumental in helping first-time attendees feel welcomed and integrated into the community.
 
-To involve newcomers in the Hackathon, we created the Buddy System.
-It pairs the participants in a mentor-mentee fashion, allowing mentors to help mentees throughout the Hackathon, giving guidance regarding interests, projects to join, and networking.
-This system was set up in such a way that the pairs were assigned at random, avoiding creating any biases in the matching.
+\section{Hack-Track}
+\coordinator{Qing (Vincent) Wang}
 
-\subsection{Hack-Track}
+The Hack-Track is designed for hands-on project development, allowing participants to collaborate on diverse and innovative projects.
+Before the OHBM Hackathon 2023 began, project leaders submitted their proposals to our repository on GitHub, setting the stage for a dynamic and inclusive event.
+A pre-Hackathon online session advertised the schedule and introduced participants to the online platform.
+At the start of the Brainhack, project leaders pitched their projects, outlining goals, current status, and future aspirations.
 
-Before the OHBM Hackathon 2023 commenced, project leaders submitted their proposals to our repository, based on Github, setting the stage for a dynamic and inclusive event.
-At the start of the Brainhack, these leaders had the opportunity to pitch their projects to the audience.
-During these presentations, each leader was allotted a few minutes to outline their project's goals, current status, and aspirations for the hackathon and its future trajectory.
-A comprehensive list of these diverse and innovative projects can be found at our main website \footnote{https://ohbm.github.io/hackathon2023/hacktrack/}.
-The range of topics and scopes of these projects was impressively varied, encompassing areas such as coding, writing, documentation, community guideline development, and visualisation techniques.
-This extensive range allowed participants to tailor their involvement to their interests and goals.
-Some dedicated their efforts to a single project, immersing themselves deeply in a specific area or task.
-Others divided their time among multiple projects, seeking a broader experience.
-Participants selected projects based on various factors.
-For some, it was an opportunity to contribute to a field in which they already had expertise.
-Others saw it as a chance to acquire new skills or knowledge in an unfamiliar area.
+The projects covered a wide range of topics, including coding, research tool development, documentation, community guideline development, and visualization techniques.
+This variety allowed participants to choose projects based on their interests and goals.
+Some focused deeply on a single project, while others divided their time among multiple projects for a broader experience.
+Participants selected projects to contribute to their expertise or to acquire new skills and knowledge.
+Hackathon projects often introduced novel methods or programming languages (e.g., Julia, WebAssembly, new visualizations), providing participants with practical skills for future endeavors.
+Beyond the technical and educational aspects, the event also fostered community building, with many participants drawn to projects for the opportunity to collaborate and learn from new peers.
+Over three intensive days, 33 projects advanced significantly, thanks to the collaborative efforts of 167 scientists from across the globe \hl{(Figure xD)}.
+Despite the challenges of a hybrid event, especially in synchronizing video streams, we utilized various technologies within Discord to facilitate seamless participant exchanges.
+This approach ensured that all participants, regardless of geographical location, could fully engage in the hackathon's collaborative spirit.
 
-Additionally, the Hackathon projects often introduced novel methods or programming languages, offering participants practical skills that could be applied to future endeavours.
-Beyond the technical and educational aspects, the event also fostered community building; many were drawn to projects simply for the opportunity to collaborate with and learn from a new group of peers.
-Over three intensive days, the 2023 edition of the OHBM Hackathon successfully propelled forward [XX – number of projects] projects, thanks to the collaborative efforts of [xx – number of scientists] scientists hailing from countries across Africa, Asia-Pacific, Europe, the Middle East, North America, and South America.
-Despite the inherent challenges of a hybrid event, especially in synchronising video streams, we effectively utilised various technologies within a single platform, Discord, to facilitate seamless participant exchanges.
-This approach ensured that irrespective of geographical location, every participant could engage fully in the hackathon's collaborative spirit.
+\section{Public Relations and Outreach}
+\coordinator{Bruno Hebling Vieira, Xinhui Li}
 
-\subsection{Projects}
+Following the successful engagement from the OHBM Brainhack 2022, prior to the Hackathon, we leveraged various social media platforms, including Twitter, Mattermost, and WeChat, to announce registration information, and promote community engagement by sharing live project presentations during the event.
+Throughout the Hackathon, Discord served as the primary communication channel between organisers and participants as the general channel (Brainhack announcement) has been created for Brainhack 2022 and many of the existing projects can continue the channels for 2023 without the need to recreate the channel.
+A general channel was used to announce major events, while dedicated channels were automatically generated for each proposed project, facilitating focused group discussion among interested participants regarding project specifics.
 
-\markdownInput{projects.md}
+Overall, digital outreach remains a fundamental tool for dissemination, with approximately 30\% of the pre-hackathon survey respondents reporting that they learned about the event from social media or the website.
+
+
+\section{Projects}
+
+
+\section{Mini-Grant Initiative}
+
+This year, we introduced Mini-Grant initiative, generously supported by sponsors, aimed at empowering and supporting Brainhackers. The grants were distributed across nine categories:
+\begin{itemize}
+\item Open Science Mini-Grant: Funding projects promoting open science principles like data sharing and open-source software.
+\item Diversity and Inclusion Mini-Grant: Supporting initiatives that enhance diversity and inclusion in science or academia.
+\item Public Science Communication Mini-Grant: Backing efforts to communicate scientific research to the public in an accessible manner.
+\item Innovative Teaching Method Mini-Grant: Encouraging creative approaches to science education.
+\item Interdisciplinary Collaboration Mini-Grant: Fostering cross-disciplinary research to address complex challenges.
+\item Student-Led Research Mini-Grant: Supporting science projects led by students.
+\item Global Science Collaboration Mini-Grant: Encouraging international research collaborations.
+\item Early Career Researcher Mini-Grant: Funding early-career scientists to conduct independent projects.
+\item Science and Art Integration Mini-Grant: Funding projects that blend scientific concepts with artistic expression.
+\end{itemize}
+
+These grants were based on project merit, with nominations made by teams or peers after the project pitches and rhyming battle.
+However, the response was less enthusiastic than anticipated, receiving only a limited number of nominations.
+This outcome prompted a reflection on the initiative's alignment with the community's core values.
+The competitive nature of the grant-awarding process might resonate poorly with the collaborative and inclusive ethos of the Brainhack community.
+In light of these reflections, a decision was made to retain the funds for future Brainhack events, with a new approach in mind.
+For the next OHBM Hackathon editions, the organizers could initiate the funding process earlier, allowing participants to submit proposals during registration.
+This process will enable us to review the needs of the projects in advance and provide support where it's most needed, such as for essential equipment like webcams or help with travel arrangement costs.
+The pivotal strategy aims to demonstrate our commitment to the community and ensure that support is available from the outset, fostering a more inclusive and resourceful environment
+
+\section{Rhyming Battle}
+
+One of the most memorable and engaging events at the OHBM Brainhack 2023 was the 'Rhyming Battle.'
+Held before the project presentations, this unique event featured three participants who artistically expressed their experiences and challenges encountered during the hackathon.
+They crafted short poems about their projects and the various aspects they faced during Brainhack, bringing a touch of lighthearted humour to their scientific endeavours \hl{(see Appendix)}.
+The Rhyming Battle provided an entertaining break from the Hackathon's more scientific aspects.
+It allowed attendees to resonate with each other's experiences, celebrating the struggles and triumphs inherent in scientific projects.
+The event showcased the creative and vibrant spirit of the Brainhack community.
+Voting for the winner was not straightforward, as the attendees were equally good.
+The prize was a single 3D homemade sculpture representing the Brainhack 2023 logo, made for the winner of the battle \hl{(Figure x)}.
+However, the enthusiasm of the battlers and the public was overwhelming, and we decided to 3D print the same sculpture for every battle participant.
+Ultimately, the spirit of Brainhack community prevailed \cite{gau2021brainhack} \hl{(Gau et al., 2021; Levitis et al., 2021)}, and every participant was celebrated as a winner.
+
+\section{Conclusion}
+
+The OHBM Brainhack 2023 exemplified a vibrant fusion of education, innovation, and community spirit.
+Through initiatives like Train-Track, Hack-Track, the Buddy System, the Rhyming Battle, and the Mini-Grant program, the event fostered an environment rich in learning, creativity, and collaboration.
+These elements, coupled with a commitment to open science and diversity, underscored the gathering's success in nurturing a dynamic scientific community.
+Reflecting on the experiences and feedback from this year, Brainhack is poised to evolve, embracing lessons learned to enhance future hackathons.
+This continuous improvement and deepened community engagement are set to further empower and inspire participants in the years to come.
+
+\bibliographystyle{unsrt}
+\bibliography{refs}
 
 \end{document}
