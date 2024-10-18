@@ -1,6 +1,10 @@
 \documentclass{article}
 \usepackage{graphicx}
 \usepackage{soul,xcolor}
+\usepackage{multirow}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{hyperref}
+\RequirePackage{fontawesome}
 
 \newcommand\coordinator[1]{\begin{flushleft}\small\textit{#1}\end{flushleft}}
 
@@ -14,46 +18,93 @@
 
 \section{Introduction}
 
-The OHBM Brainhack is a satellite hackathon of the Organization for Human Brain Mapping (OHBM) annual meeting where neuroscientists of various expertise levels and academic interests convene to collaborate in a dynamic hackathon-style environment.
-These collaborations focus on the shared interests of participants and foster a culture of open science aligned with the mission of the Open Science Special Interest Group (OSSIG).
-OHBM Brainhack 2023 was designed with three core principles in mind: 1) to provide an inclusive, equitable, and collaborative space for interdisciplinary interaction among scientists at all career stages; 2) to empower scientists to enhance their research quality through hands-on training, and 3) provide researchers opportunity to propose and work on innovative projects.
-In response to the feedback and building on previous editions \cite{Moia2024}, the OHBM Brainhack 2023 continued to be proposed in a hybrid format/to reduce the carbon footprint and address barriers such as lack of funding or visa issues, emphasizing organizers’ commitment to improving diversity, inclusion, and equitable access by enabling broader participation from the global neuroscience community.
-The following sections detail the Hack-Track, Train-Track, and Buddy System of the OHBM 2023 Brainhack.
+The OHBM Brainhack is a satellite hackathon of the Organization for Human Brain Mapping (OHBM) annual meeting.
+It serves as a hub for neuroscientists of various disciplines and career stages to collaborate in a dynamic, open, and inclusive environment.
+Through its unique format, the Brainhack promotes open science by encouraging participants to engage in collaborative project development, skill-sharing, and community building.
+These efforts are deeply aligned with the mission of OHBM’s Open Science Special Interest Group (OSSIG), fostering transparency, reproducibility, and accessibility in neuroscience research.
+
+The 2023 OHBM Brainhack centered around three core pillars:
+1) \emph{Inclusivity} – Cultivating an environment where participants from all backgrounds, disciplines, and expertise levels feel welcome and empowered to contribute meaningfully;
+2) \emph{Empowerment} – Providing hands-on training and skill-building opportunities through structured and unstructured learning sessions to enhance participants' research abilities;
+3) \emph{Innovation} – Encouraging the development of novel and interdisciplinary projects that push the boundaries of neuroimaging and neuroscience research.
+This year’s event continued to build upon the foundations laid by previous Brainhack editions.
+The hybrid format introduced in earlier years was retained to reduce the carbon footprint \cite{Epp2023} and address barriers such as lack of funding or visa challenges.
+This hybrid approach allowed broader participation from the global neuroscience community and reinforced the organizers' commitment to diversity, inclusion, and equitable access.
+
+Notable new initiatives in 2023 included the Mini-Grant Initiative, designed to support projects prioritizing open science, diversity, and interdisciplinary collaboration.
+This initiative, while well-received, revealed mixed responses regarding its competitive nature, highlighting important insights for future event planning.
+This system fostered meaningful connections and enhanced participants' engagement with the Brainhack community.
+
+In addition to these new elements, the Train-Track and Hack-Track components remained central to the event's structure.
+The Train-Track offered structured tutorials and self-directed learning sessions on topics such as coding, machine learning, and reproducible research practices.
+Meanwhile, the Hack-Track provided an opportunity for participants to collaborate on open projects submitted by community members, with many focusing on developing open-source software tools and pipelines for neuroimaging analysis.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \label{fig:demographics}
+    \caption{
+        The four panels illustrate key demographic and participation trends for the OHBM BrainHack 2023 participants.
+        \textbf{Panel A} shows the geographic distribution, with Canada, the United States, and France as the most represented countries among 13 in total.
+        \textbf{Panel B} presents the career status distribution, with Early Career Researchers (ECRs)—including PhD students and postdoctoral researchers—making up half of the attendees, followed by established faculty (31.2\%) and Master's students (12.5\%).
+        \textbf{Panel C} depicts participant satisfaction ratings for sessions such as Unconference, TrainTrack, and HackTrack, showing higher satisfaction for HackTrack sessions overall.
+        \textbf{Panel D} examines format preferences (hybrid vs. onsite), with a stronger preference for hybrid participation among ECRs and attendees with more prior experience at BrainHack events, while onsite preference was higher among established faculty.
+    }
+\end{figure}
 
 \section{Train-Track}
 \coordinator{Andrea Gondová}
 
-The Train-Track was an educational track aiming to create a supportive space for knowledge exchange and to allow participants enhance their hacking skills and knowledge through structured and unstructured study sessions.
-Suggested training materials ranged across diverse topics including coding skills, good coding and research practices, and machine learning and consisted of tutorials and/or pre-recorded videos largely provided by the BrainHack School (interested readers, see \hl{Table 1x} for list of training materials with links).
-Additionally, participants were encouraged to customize their learning experience by self-organizing study group-like learning sessions for attendees with shared learning goals.
-And onsite sign-ups were opened for mentor-mentee pairings to enhance learning of specific (and advanced) topics and networking opportunities.
-Participants were encouraged to use various communication platforms, including in-person interactions and Discord channels, to foster this collaborative learning process. 
+The Train-Track was an educational component aiming to create a supportive environment for knowledge exchange, allowing participants toenhance their technical skills and knowledge through both structured and flexible learning sessions. Suggested training materials covered diverse range of topics, including coding skills, good coding and best research practices, and machine learning. These materials consisted of tutorials and/or pre-recorded videos, largely sourced from the BrainHack School (for more information, see \ref{tab:traintrack-material} for training materials and links). Additionally, participants were encouraged to customize their learning experience  by self-organizing  study group with others sharing similar learning goals. Onsite sign-ups were also avaliable for mentor-mentee pairings, offering antenddes opportunities to gain expertise in advanced topics while expanding their professional networking. Various communication platforms, including in-person sessions and Discord, were used to facilitate collaborative learning.
 
-Out of 31 respondents to the post-hackathon survey, 23\% took part in Train-Track sessions focused on learning coding, machine learning, version control, and coding best practices.
-Among these, “Good practices” were the most recommended Train-Track topic.
-The remaining respondents either concentrated exclusively on the Hack-Track or were unaware of the Train-Track and its goals.
-Feedback highlighted a desire for more structured planning and organization in Train-Track, such as structured sessions and prompts, to enhance the experience.
-Organizers recognize that increased structure could improve accessibility and participation and are keen to support attendees to lead more traditional training sessions.
-However, Train-Track is intended for dynamic, flexible, community-driven learning, offering suggested materials for inspiration rather than strict learning guidelines.
-The intention is to give participants space to shape their learning journey dynamically while benefiting from the expertise of other attendees.
-Future improvements should include clearer introduction to Train-Track at the event's start, encouraging participants to express early interest in different topics, and ongoing discussions to refine the section’s structure and objectives.
+Among the 31 respondents to the post-hackathon survey, 23\% participated in Train-Track sessions, with topics ranging from coding and machine learning to version control and coding best practices. “Good practices” was the most recommended topic by participants. However, feedback suggested a need for more structure and planning, such as scheduled sessions and topic prompts, to improve accessibility and participation. Organizers acknowledged the value of increased structure while maintaining Train-Track’s dynamic and community-driven nature. The goal remains to provide a flexible learning environment with suggested materials for inspiration, rather than prescriptive guidelines. To improve future iterations of Train-Track, organizers plan to introduce the program more clearly at the start of the event, encourage early interest in specific topics, and refine the program’s structure and objectives to better support participants.
 
-The collaborative setting of Train-Track allowed participants to engage with like-minded peers, creating a supportive space for knowledge exchange and skill development.
-Course topics were carefully selected based on submitted projects, primarily utilising Python, Git, and GitHub.
-We also expanded topics to include “Reproducible Workflows of The Turing Way”, “Transparent MRI”, and “Machine Learning for Neuroimaging and Reproducibility Checklist”.
-Notably, these courses were pre recorded and made available on YouTube by the OHBM Open Science Interest Group (OSSIG), ensuring accessible learning resources.
-Participants were encouraged to use various communication platforms, including in-person interactions and digital channels like Discord, to foster this collaborative learning process.
-The Train-Track segment at OHBM Brainhack 2023 truly embodied the spirit of community and collective growth.
+\begin{table}[]
+    \begin{tabular}{|l|l|c|}
+    \hline
+    \multicolumn{1}{|c|}{\textbf{Topic}}        & \multicolumn{1}{|c|}{\textbf{Session}}         & \multicolumn{1}{|c|}{\textbf{Link}}                                                                                                 \\ \hline
+    \textbf{Getting started}                    & Setting-up a hack friendly environment         & \href{https://psy6983.brainhackmtl.org/modules/installation/}{\faExternalLink}                                                      \\ \hline
+                                                & Intro to jupyter notebooks                     & \href{https://docs.jupyter.org/en/latest/start/index.html}{\faExternalLink}                                                         \\ \cline{2-3} 
+                                                & Intro to bash                                  & \href{https://psy6983.brainhackmtl.org/modules/introduction\_to\_terminal/}{\faExternalLink}                                        \\ \cline{2-3} 
+                                                & Python: Data analysis                          & \href{https://psy6983.brainhackmtl.org/modules/python\_data\_analysis/}{\faExternalLink}                                            \\ \cline{2-3} 
+                                                & Python: Visualisation                          & \href{https://psy6983.brainhackmtl.org/modules/python\_visualization/}{\faExternalLink}                                             \\ \cline{2-3} 
+                                                & Python: Writing a script                       & \href{https://psy6983.brainhackmtl.org/modules/python\_scripts/}{\faExternalLink}                                                   \\ \cline{2-3} 
+    \multirow{-6}{*}{\textbf{Coding skills}}    & Python: Packaging (pipy)                       & \href{https://psy6983.brainhackmtl.org/modules/packaging/}{\faExternalLink}                                                         \\ \hline
+                                                & Using Git and Github                           & \href{https://youtu.be/zh\_WFv0uk7w}{\faExternalLink} \href{https://psy6983.brainhackmtl.org/modules/git\_github/}{\faExternalLink} \\ \cline{2-3} 
+                                                & Data management with Datalad                   & \href{https://psy6983.brainhackmtl.org/modules/datalad/}{\faExternalLink} \href{https://youtu.be/QsAqnP7TwyY}{\faExternalLink}      \\ \cline{2-3} 
+    \multirow{-5}{*}{\textbf{Version control}}  & Containers for science                         & \href{https://youtu.be/pc3YOZUG3lQ}{\faExternalLink}                                                                                \\ \hline
+                                                & How to write good code                         & \href{https://youtu.be/gfPP2pQ8Rms}{\faExternalLink}                                                                                \\ \cline{2-3} 
+                                                & Reproducible workflows: The Turing Way         & \href{https://youtu.be/tk2eZSrM8oA}{\faExternalLink}                                                                                \\ \cline{2-3} 
+    \multirow{-3}{*}{\textbf{Good practices}}   & Reproducible workflows: Transparent MRI        & \href{https://youtu.be/dSOQgyuL51U}{\faExternalLink}                                                                                \\ \hline
+                                                & Machine Learning basics                        & \href{https://psy6983.brainhackmtl.org/modules/machine\_learning\_basics/}{\faExternalLink}                                         \\ \cline{2-3} 
+                                                & Machine Learning for neuroimaging              & \href{https://psy6983.brainhackmtl.org/modules/machine\_learning\_neuroimaging/}{\faExternalLink}                                   \\ \cline{2-3} 
+    \multirow{-3}{*}{\textbf{Machine learning}} & Machine Learning Reproducibility Checklist     & \href{https://www.cs.mcgill.ca/$\sim$jpineau/ReproducibilityChecklist.pdf}{\faExternalLink}                                         \\ \hline
+    \end{tabular}
+    \caption{Training materials provided for the Train-Track sessions at OHBM BrainHack 2023, including tutorials, pre-recorded videos, and resource links for coding, machine learning, and best practices.}
+    \label{tab:traintrack-material}
+\end{table}
 
 \section{Buddy System}
 \coordinator{Sina Mansour L.}
 
 The Buddy System was established to support and engage newcomers at the Hackathon.
 This initiative pairs participants in a mentor-mentee fashion, with mentors guiding interests, projects to join, and networking opportunities throughout the Hackathon.
-Introduced in the previous 2022 edition, the system was refined for 2023 to create a more dynamic and natural community structure \hl{(see Figure X)}.
+Introduced in the previous 2022 edition, the system was refined for 2023 to create a more dynamic and natural community structure (see \ref{fig:buddy-system}).
 Pairs were given the freedom to choose their buddies to avoid any biases in matching, ensuring a fair and supportive environment for all participants.
 In doing so, first-time attendees and more experienced brainhackers were encouraged to network and get to know each other while also sharing information about what to expect from the brainhack.
 This system has been instrumental in helping first-time attendees feel welcomed and integrated into the community.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \label{fig:buddy-system}
+    \caption{
+        (a) Front, and (b) back of a buddy card.
+        Buddy cards were distributed amongst all attendees who expressed interest in participating in the refined dynamic buddy system.
+        Individualized who participated were asked to share their cards with other brainhackers during lunch and coffee breaks.
+        The cards acted as catalist to start a conversation and exchange thoughts, experiences, and contact information.
+    }
+\end{figure}
 
 \section{Hack-Track}
 \coordinator{Qing (Vincent) Wang}
@@ -69,7 +120,7 @@ Some focused deeply on a single project, while others divided their time among m
 Participants selected projects to contribute to their expertise or to acquire new skills and knowledge.
 Hackathon projects often introduced novel methods or programming languages (e.g., Julia, WebAssembly, new visualizations), providing participants with practical skills for future endeavors.
 Beyond the technical and educational aspects, the event also fostered community building, with many participants drawn to projects for the opportunity to collaborate and learn from new peers.
-Over three intensive days, 33 projects advanced significantly, thanks to the collaborative efforts of 167 scientists from across the globe \hl{(Figure xD)}.
+Over three intensive days, 33 projects advanced significantly, thanks to the collaborative efforts of 167 scientists from across the globe.
 Despite the challenges of a hybrid event, especially in synchronizing video streams, we utilized various technologies within Discord to facilitate seamless participant exchanges.
 This approach ensured that all participants, regardless of geographical location, could fully engage in the hackathon's collaborative spirit.
 
@@ -82,9 +133,7 @@ A general channel was used to announce major events, while dedicated channels we
 
 Overall, digital outreach remains a fundamental tool for dissemination, with approximately 30\% of the pre-hackathon survey respondents reporting that they learned about the event from social media or the website.
 
-
 \section{Projects}
-
 
 \section{Mini-Grant Initiative}
 
