@@ -134,6 +134,33 @@ Overall, digital outreach remains a fundamental tool for dissemination, with app
 
 \section{Projects}
 
+\subsection{BrainViewer: Seamless Brain Mesh Visualization with WebGL}
+Authors: Florian Rupprecht, Reinder Vos de Wael
+
+BrainViewer, a novel JavaScript package, is poised to transform how researchers and developers interact with brain meshes by enabling seamless visualization directly within web browsers. By harnessing the power of ThreeJS, BrainViewer offers a responsive and adaptable viewing experience. Its integration with the JavaScript event system facilitates the creation of intricate and customizable behaviors, enhancing its utility.
+
+BrainViewer is currently in an active phase of development. With our commitment to meeting the demands of our short-term projects, we anticipate the first release of BrainViewer within the coming months. BrainViewer is available at https://github.com/cmi-dair/brainviewer. Upon release, it will be installable through the npm package management system. A live demo that moves based on microphone input is available at https://cmi-dair.github.io/brainviewer-demo/.
+
+BrainViewer harnesses the power of WebGL and WebGPU (depending on device capabilities) to efficiently render brain meshes within web browsers, delivering a visually engaging experience. Test users have consistently praised the smoothness of interaction. It supports a wide range of devices, from large PC screens with mouse and keyboard to compact mobile screens with touch interfaces, ensuring seamless deployment across ecosystems. Moreover, BrainViewer integrates with the JavaScript event system, enabling users to define complex and tailored behaviors that enhance interactivity and exploration.
+
+\subsection{Clinica's image processing pipeline QC}
+Authors: Matthieu Joulot, Ju-Chi Yu
+
+The goal of the project was to evaluate different quality check (QC) metrics and visuals for pipelines currently existing in Clinica \cite{routier2021clinica}, which deal with registration or segmentation. That way, we would be able to find a few good metrics to separate the good images from the bad or moderately good ones, which the users would check using some visual we would generate for them.
+
+We were able to output seven available QC metrics for registration, and with PCA, we evaluated their factor structure and kept only two metrics that captures the most QC information: 1) the correlation coefficients between the MNI template (target) and the subject’s brain image, and 2) the dice score (i.e., a type of distance measure) obtained by a brain extraction tool (BET) algorithm called HD-BET.
+
+We will look further into our pipeline based on this result, so that we can have a better idea of what we want to implement in the future version of Clinica, which will include QC.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/clinica-1.png}
+    \label{fig:clinica-1}
+    \caption{
+        Scatterplot of HD BET Dice probability and correlation ratio between reference and moving images. Red color means both metrics are below the threshold, blue or purple means one of the metrics is below the threshold, green means both metrics are above the threshold.
+    }
+\end{figure}
+
 \section{Mini-Grant Initiative}
 
 This year, we introduced Mini-Grant initiative, generously supported by sponsors, aimed at empowering and supporting Brainhackers. The grants were distributed across nine categories:
