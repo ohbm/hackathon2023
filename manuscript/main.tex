@@ -1,15 +1,18 @@
 \documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{authblk}
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage{multirow}
+\usepackage{natbib}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{hyperref}
 
 \newcommand\coordinator[1]{\begin{flushleft}\small\textit{#1}\end{flushleft}}
 
 \title{Proceedings of the OHBM Hackathon 2023}
-\author{Yu-Fang Yang, Anibal Sólon Heinsfeld}
-\date{December 2023}
+
+\include{authors}
 
 \begin{document}
 
@@ -40,7 +43,7 @@ Meanwhile, the Hack-Track provided an opportunity for participants to collaborat
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \includegraphics[width=0.2\textwidth]{images/demographics.png}
     \label{fig:demographics}
     \caption{
         The four panels illustrate key demographic and participation trends for the OHBM BrainHack 2023 participants.
@@ -134,21 +137,25 @@ Overall, digital outreach remains a fundamental tool for dissemination, with app
 
 \section{Projects}
 
+
+
 \subsection{BrainViewer: Seamless Brain Mesh Visualization with WebGL}
-Authors: Florian Rupprecht, Reinder Vos de Wael
+\textbf{Authors}: Florian Rupprecht, Reinder Vos de Wael
 
 BrainViewer, a novel JavaScript package, is poised to transform how researchers and developers interact with brain meshes by enabling seamless visualization directly within web browsers. By harnessing the power of ThreeJS, BrainViewer offers a responsive and adaptable viewing experience. Its integration with the JavaScript event system facilitates the creation of intricate and customizable behaviors, enhancing its utility.
 
-BrainViewer is currently in an active phase of development. With our commitment to meeting the demands of our short-term projects, we anticipate the first release of BrainViewer within the coming months. BrainViewer is available at https://github.com/cmi-dair/brainviewer. Upon release, it will be installable through the npm package management system. A live demo that moves based on microphone input is available at https://cmi-dair.github.io/brainviewer-demo/.
+BrainViewer is currently in an active phase of development. With our commitment to meeting the demands of our short-term projects, we anticipate the first release of BrainViewer within the coming months. BrainViewer is available at \href{https://github.com/cmi-dair/brainviewer}{Github}. Upon release, it will be installable through the npm package management system. A live demo that moves based on microphone input is available at \href{ https://cmi-dair.github.io/brainviewer-demo/}{GitHub}.
 
 BrainViewer harnesses the power of WebGL and WebGPU (depending on device capabilities) to efficiently render brain meshes within web browsers, delivering a visually engaging experience. Test users have consistently praised the smoothness of interaction. It supports a wide range of devices, from large PC screens with mouse and keyboard to compact mobile screens with touch interfaces, ensuring seamless deployment across ecosystems. Moreover, BrainViewer integrates with the JavaScript event system, enabling users to define complex and tailored behaviors that enhance interactivity and exploration.
 
+
+
 \subsection{Clinica's image processing pipeline QC}
-Authors: Matthieu Joulot, Ju-Chi Yu
+\textbf{Authors}: Matthieu Joulot, Ju-Chi Yu
 
 The goal of the project was to evaluate different quality check (QC) metrics and visuals for pipelines currently existing in Clinica \cite{routier2021clinica}, which deal with registration or segmentation. That way, we would be able to find a few good metrics to separate the good images from the bad or moderately good ones, which the users would check using some visual we would generate for them.
 
-We were able to output seven available QC metrics for registration, and with PCA, we evaluated their factor structure and kept only two metrics that captures the most QC information: 1) the correlation coefficients between the MNI template (target) and the subject’s brain image, and 2) the dice score (i.e., a type of distance measure) obtained by a brain extraction tool (BET) algorithm called HD-BET.
+We were able to output seven available QC metrics for registration, and with PCA, we evaluated their factor structure and kept only two metrics that captures the most QC information: 1) the correlation coefficients between the MNI template (target) and the subject’s brain image, and 2) the Dice score (i.e., a type of distance measure) obtained by a brain extraction tool (BET) algorithm called HD-BET.
 
 We will look further into our pipeline based on this result, so that we can have a better idea of what we want to implement in the future version of Clinica, which will include QC.
 
@@ -160,6 +167,149 @@ We will look further into our pipeline based on this result, so that we can have
         Scatterplot of HD BET Dice probability and correlation ratio between reference and moving images. Red color means both metrics are below the threshold, blue or purple means one of the metrics is below the threshold, green means both metrics are above the threshold.
     }
 \end{figure}
+
+
+
+\subsection{Neuroimaging Meta-Analyses}
+\textbf{Authors}: James Kent, Yifan Yu, Max Korbmacher, Bernd Taschler, Lea Waller, Kendra Oudyk
+
+Neuroimaging Meta-Analyses serve an important role in cognitive neuroscience (and beyond) to create consensus and generate new hypotheses. However, tools for neuroimaging meta-analyses only implement a small selection of analytical options, pigeon-holing researchers to particular analytical choices. Additionally, many niche tools are created and abandoned as the graduate student who was working on the project graduated and moved on. Neurosynth-Compose/NiMARE are part of a Python ecosystem that provides a wide range of analytical options (with reasonable defaults), so that researchers can make analytical choices based on their research questions, not the tool.
+
+To enhance and broaden the ecosystem, our efforts were channelled into a variety of projects. Initially, we focused on making Coordinate-based Meta-Regression more efficient and user-friendly, with the goal of fostering the adoption of a more flexible and sensitive model approach to coordinate-based meta-analysis. Following that, we sought to improve the tutorial for Neurosynth-Compose, aiming to increase its usage by providing clear and accessible guidance on how to utilize the website effectively. Additionally, we aimed to refine the masking process for Image-Based Meta-Analysis, striving to incorporate more voxels/data, thereby enhancing the analysis's overall data richness. Finally, we embarked on running topic modeling of abstracts from papers associated with NeuroVault collections, a move intended to identify groupings of images that are suitable for meta-analysis, further contributing to the field's advancement and the utility of NeuroVault's resources.
+
+Progress was achieved across all the projects undertaken to enhance the ecosystem. For the Coordinate-based Meta-Regression, we identified several bugs and areas of inefficient code, alongside creating notebooks that demonstrate usage and pinpoint issues, laying the groundwork for future improvements. Feedback was meticulously provided to refine the tutorial, focusing on improving its clarity and conciseness, thereby making it more accessible to users. In terms of the Image Based Meta-Analysis, an outline of a solution to include more voxels was drafted, complete with a plan for its implementation, promising to enrich the analysis by utilizing a larger dataset. Furthermore, through topic modeling, we gained insights into the distribution of images on NeuroVault, identifying how they are grouped, which aids in understanding the landscape of available data for meta-analysis.
+
+The improvements made to NiMARE and related tools provide more accessibility to neuroimaging meta-analyses making it easier to perform crucial analyses in our field.
+
+
+
+
+\subsection{NARPS Open Pipelines}
+\textbf{Authors}: Boris Clénet, Élodie Germani, Arshitha Basavaraj, Remi Gau, Yaroslav Halchenko, Paul Taylor, Camille Maumet
+
+Different analytical choices can lead to variations in the results, a phenomenon that was illustrated in neuroimaging by the NARPS project \cite{botvinik2020}. In NARPS, 70 teams were tasked to analyze the same dataset to answer nine yes/no research questions. Each team shared their final results and a COBIDAS-compliant \cite{nichols2017} textual description of their analysis. The goal of NARPS Open Pipelines is to create a codebase reproducing the 70 pipelines of the NARPS project and share this as an open resource for the community.
+Results 
+During the OHBM Brainhack 2023, participants had the opportunity to improve the project in various ways. First, they focused on fostering a more inclusive environment for new contributors, refining the contribution process through proofreading and testing. Several pull requests (
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/66}{PR \#66},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/65}{PR \#65},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/63}{PR \#63},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/64}{PR \#64},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/52}{PR \#52},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/50}{PR \#50}
+) were dedicated to this effort, rectifying inconsistencies in the documentation and contributing procedures.
+Additionally, they implemented GitHub Actions workflows to enable continuous integration, ensuring the testing of pipelines with each alteration (
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/47}{PR \#47}
+), and crafted a new workflow to detect code comments and documentation typos (
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/48}{PR \#48}
+).
+Acquisition of new skills was another significant aspect, with individuals diving into NiPype and advancing pipeline reproductions. Thanks to Paul Taylor's contributions, a deeper understanding of AFNI pipelines emerged, particularly benefiting from \textit{afni\_proc} examples within the NARPS project \cite{taylor2023}. This endeavor resulted in the initiation of new pipeline reproductions (
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/62}{PR \#62},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/issues/61}{Issue \#61},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/59}{PR \#59},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/issues/57}{Issue \#57},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/issues/60}{Issue \#60},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/55}{PR \#55},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/issues/51}{Issue \#51},
+\href{https://github.com/Inria-Empenn/narps_open_pipelines/issues/49}{Issue \#49}
+).
+Ultimately, the Hackathon yielded substantial progress: 6 pull requests merged, 4 issues opened, 4 closed, and 6 opened, showcasing a fruitful collaboration and dedication to project enhancement.
+
+
+
+\subsection{ET2BIDS - EyeTracker to BIDS}
+\textbf{Authors}: Elodie Savary, Remi Gau, Oscar Esteban
+
+In the realm of neuroimaging, BIDS has become the de facto standard for structuring data. Its adoption has simplified the data management process, enabling researchers to focus on their scientific inquiries rather than the intricacies of data organization \cite{gorgolewski2016}. However, the inclusion of eye-tracking data within the BIDS framework has remained a challenge, often requiring manual data rearrangement. The ET2BIDS project aimed to take a significant step toward incorporating eye-tracking data into BIDS, leveraging the bidsphysio library to facilitate this integration.
+
+Bidsphysio is a versatile tool designed to convert various physiological data types, including CMRR, AcqKnowledge, and Siemens PMU, into BIDS-compatible formats. In particular, it offers a dedicated module called edf2bidsphysio to convert EDF files containing data from an Eyelink eyetracker. An advantageous feature of the bidsphysio library is its Docker compatibility, ensuring smooth cross-platform execution without the need for additional installations.
+
+Before starting our project, a bug had been identified in the Docker image, which hindered the correct execution of the edf2bidsphysio module. Our primary focus was, therefore, to address and resolve this bug in order to enable the utilization of the Docker image for eye-tracking data conversion.
+
+The ET2BIDS project made significant progress in converting eye-tracking data into BIDS format. We initially processed the test data from the GitHub repository, overcoming the bug that had hindered the edf2bidsphysio module's execution. Moreover, with minor modifications to the module, we successfully processed a dataset acquired by the authors using an Eyelink eye tracker, showcasing potential bidsphysio versatility in handling various eye-tracking datasets.
+
+The future of eye-tracking data integration into BIDS is evolving as we identify essential fields and metadata necessary for reproducible research. BIDS specifications for eye-tracking data are in development, with expanding guidelines for essential reporting in research studies (e.g. \cite{dunn2023}).
+
+As these guidelines grow, we will have to adapt bidsphysio to match the evolving BIDS standards, ensuring it converts eye-tracking data in accordance with the latest recommendations.
+
+
+
+\subsection{Physiopy - Practices and Tools for Physiological Signals}
+\textbf{Authors}: Mary Miedema, Céline Provins, Sarah Goodale, Simon R. Steinkamp, Stefano Moia
+
+The acquisition and analysis of peripheral signals such as cardiac and respiratory measures alongside neuroimaging data provides crucial insight into physiological sources of variance in fMRI data. The physiopy community aims to develop and support a comprehensive suite of resources for researchers to integrate physiological data collection and analysis with their studies. This is achieved through regular discussion and documentation of community practices alongside the active development of open-source toolboxes for reproducibly working with physiological signals. At the OHBM 2023 Brainhack, we advanced physiopy’s goals through three parallel projects:
+
+\textbf{Documentation of Physiological Signal Acquisition Community Practices}: We have been working to build “best community practices” documentation from experts in the physiological monitoring realm of neuroimaging. The aim of this project was to draft a new version of our documentation adding information from six meetings throughout the year discussing good practices in acquisition and use of cardiac, respiratory, and blood gas data. The documentation is finished and ready for editorial review from the community before we release this version publicly.
+
+\textbf{Semi-Automated Workflows for Physiological Signals}: The aim of this project was to upgrade the existing code base for the peakdet and phys2denoise packages to achieve a unified workflow encompassing all steps in physiological data processing and model estimation. We mapped out and began implementing a restructured workflow for both toolboxes incorporating configuration files for more flexible and reproducible usage. To better interface with non-physiopy workflows, we added support for NeuroKit2 functionalities. As well, we added visualization support to the phys2denoise toolbox.
+
+\textbf{PhysioQC: A Physiological Data Quality Control Toolbox}: This project was about creating a quality control pipeline for physiological data, similar to MRIQC, and leveraging NiReports. At the hackathon, we implemented a set of useful metrics and visualizations, as well as a proof-of-concept workflow for gathering the latter in an HTML report.
+Going forward, development of these toolboxes and revision of our community practices continues. We welcome further contributions and contributors, at any skill level or with any background experience with physiological data.
+
+
+
+\subsection{Cerebro - Advancing Openness and Reproducibility in Neuroimaging Visualization}
+\textbf{Authors}: Sina Mansour L., Annie G. Bryant, Natasha Clarke, Niousha Dehestani, Jayson Jeganathan, Tristan Kuehn, Jason Kai, Darin Erat Sleiter, Maria Di Biase, Caio Seguin, B.T. Thomas Yeo, Andrew Zalesky
+
+Openness and transparency have emerged as indispensable virtues that pave the way for high-quality, reproducible research, fostering a culture of trust and collaboration within the scientific community \cite{munafo2017manifesto}. In the domain of neuroimaging research, these principles have led to the creation of guidelines and best practices, establishing a platform that champions openness and reproducibility \cite{niso2022open}. The field has made substantial strides in embracing open science, a feat achieved through the successful integration of open-source software \cite{gorgolewski2011nipype}, public dataset sharing \cite{markiewicz2021openneuro}, standardized analysis pipelines \cite{nichols2017}, unified brain imaging data structures \cite{gorgolewski2016}, open code sharing \cite{smout2021open}, and the endorsement of open publishing.
+
+The joint efforts of these initiatives have established a robust foundation for cultivating a culture of collaboration and accountability within the neuroimaging community. Nonetheless, amidst these advancements, a crucial inquiry arises: What about the visual representations —the very tools through which we observe and make sense of neuroimaging results? It is within this context that we introduce Cerebro \cite{sina_mansour_l_2023_8238773}, a new Python-based software designed to create publication-quality brain visualizations (see Fig.x). Cerebro represents the next step in the quest for openness and reproducibility, where authors can share not only their code and data but also their publication figures alongside the precise scripts used to generate them. In doing so, Cerebro empowers researchers to make their visualizations fully reproducible, bridging the crucial gap between data, analysis, and representation.
+
+As Cerebro continues to evolve in its early development stages, this manuscript serves as a manifesto, articulating our dedication to advancing the cause of open and reproducible neuroimaging visualization. Cerebro is guided by a set of overarching goals, which include:
+
+\textbf{Fully Scriptable Publication-Quality Neuroimaging Visualization}:
+Cerebro's primary mission is to equip researchers with the means to craft impeccable brain visualizations while preserving full scriptability. Cerebro enables researchers to document and share every aspect of the visualization process, ensuring the seamless reproducibility of neuroimaging figures.
+
+\textbf{Cross-Compatibility with Different Data Formats}:
+The diversity of brain imaging data formats can pose a significant challenge for visualization. Many existing tools are constrained by compatibility limitations with specific formats. Drawing upon the foundations laid by tools like NiBabel \cite{Brett2020-nx}, Cerebro is determined to provide robust cross-compatibility across a wide spectrum of data formats.
+
+\textbf{Integration with Open Science Neuroimaging Tools}:
+We wholeheartedly acknowledge that Cerebro cannot thrive in isolation. To realize its full potential, it must seamlessly integrate into the existing tapestry of open science tools, software, and standards. Through active collaboration with the neuroimaging community, particularly through open, inclusive community initiatives such as brainhacks \cite{gau2021brainhack}, Cerebro aspires to forge cross-compatibility with established and emerging tools, standards, and pipelines. Our vision is one where the future of neuroimaging visualizations is marked by unwavering openness and reproducibility, fostered by this united effort.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \label{fig:cerebro}
+    \caption{
+        Cerebro – A Python-Based 3D Brain Visualization Tool. (a) Cerebro leverages an extensive array of open-source Python tools, forming a robust foundation for its functionality. It also integrates with these tools to enable seamless Pythonic neuroimaging visualizations. (b) Cerebro prioritizes principles of scriptability, reproducibility, visualization quality, cross-compatibility, and integration in its pursuit of providing a reliable solution for the neuroimaging community. (c) An illustrative Cerebro-generated visualization, accompanied by a scannable QR code linked to the publicly accessible reproduction scripts.
+    }
+\end{figure}
+
+
+
+\subsection{K-Particles: A visual journey into the heart of magnetic resonance imaging}
+\textbf{Authors}: Omer Faruk Gulban, Kenshu Koiso, Thomas Maullin-Sapey, Jeff Mentch, Alessandra Pizzuti, Fernanda Ponce, Kevin R. Sitek, Paul A. Taylor
+
+The primary objective of this project is to leverage particle animations to provide insights into the journey of traveling and sampling the k-space. By generating captivating visualizations, we aim to demystify the concept of k-space and the role it plays in magnetic resonance imaging (MRI), engaging both the scientific community and the general public in a delightful exploration of this fundamental aspect of imaging. This project builds on our previous Brainhack experiences that focused on generating 3D geodesic distance computation animations \cite{Brainhack2021} and particle simulation based brain explosions \cite{Moia2024}.
+
+Our methodology is as follows. First, we start from a 2D brain image (e.g. selecting a slice from a 3D anatomical MRI data 
+\cite{Brett2023-ia,Numpy,Scipy}. Then, we take its Fourier Transform and subsequently perform masking (or magnitude scaling) operations on k-space data \cite{Bernstein2004}, the transform. We then create simultaneous visualizations of the k-space magnitude and corresponding image-space magnitude data. Note that the masking of k-space data is where the participants of this project exercised their creativity, by setting up various initial conditions and a set of rules to animate the mask data. In the final step, animated frames are compiled into movies to inform (and entertain). The scripts we have used to program these steps are available in \href{https://github.com/ofgulban/k_particles}{GitHub}. Note that, we have also included several animations where no brain images were used, but instead, we generated k-space data directly in k-space to guide the unfamiliar participants with the concepts (see Figure \ref{fig:kparticles}, panel A).
+
+As a result of this hackathon project, a compilation of our progress (see Figure \ref{fig:kparticles}, panel B) can be seen at \href{https://youtu.be/_5ZDctWv5X4}{YouTube} as a video. Some of the highlights are:
+
+\begin{itemize}
+\item Audiovisualizer that maps audio features (e.g. amplitude) to k-space mask diameters
+\item Game of life \cite{Gardner1970} simulation in k-space with Hermitian symmetry.
+\item Pacman moving in k-space is implemented as a series of radial sector masks.
+\item Semi-random initialization of particle positions and semi-randomly reassigned velocities that look like an emerging butterfly.
+\item Randomized game of life initialization with vanishing trails of the previous simulation steps that look like stars, clouds, and comets orbiting frequency bands in k-space.
+\item Semi-random initialization of particle positions and velocities that look like explosions.
+\item Predetermined initialization of particle positions (e.g. at the center) and semi-randomized velocities that look like fireworks.
+\item Dancing text animations where the positions of text pixels are manipulated by wave functions.
+\item Picture based (e.g. cropped faces of the authors) moving within the k space where each pixel’s grayscale value is mapped onto a mask coefficient between 0-1.
+\end{itemize}
+
+Our future efforts will involve sophisticating the k-space simulations to generate more entertaining and educational content. For instance, instead of only visualizing the magnitude images, we can generate four panel animations showing real and imaginary (or magnitude and phase) components of the data.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \label{fig:kparticles}
+    \caption{
+        Our compilation of k-space animations generated during the brainhack can be seen at \href{https://youtu.be/XS0LEQExGU8?si=I5Zufp3AcCbdhYIR}{YouTube}.
+    }
+\end{figure}
+
+
 
 \section{Mini-Grant Initiative}
 
@@ -196,7 +346,7 @@ The event showcased the creative and vibrant spirit of the Brainhack community.
 Voting for the winner was not straightforward, as the attendees were equally good.
 The prize was a single 3D homemade sculpture representing the Brainhack 2023 logo, made for the winner of the battle \textcolor{red}{(Figure x)}.
 However, the enthusiasm of the battlers and the public was overwhelming, and we decided to 3D print the same sculpture for every battle participant.
-Ultimately, the spirit of Brainhack community prevailed \cite{gau2021brainhack} \textcolor{red}{(Gau et al., 2021; Levitis et al., 2021)}, and every participant was celebrated as a winner.
+Ultimately, the spirit of Brainhack community prevailed \cite{gau2021brainhack,levitis2021centering}, and every participant was celebrated as a winner.
 
 \section{Conclusion}
 
@@ -206,7 +356,7 @@ These elements, coupled with a commitment to open science and diversity, undersc
 Reflecting on the experiences and feedback from this year, Brainhack is poised to evolve, embracing lessons learned to enhance future hackathons.
 This continuous improvement and deepened community engagement are set to further empower and inspire participants in the years to come.
 
-\bibliography{refs}{}
 \bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}
