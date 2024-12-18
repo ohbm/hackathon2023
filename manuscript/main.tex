@@ -1,7 +1,6 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{authblk}
-\usepackage{cite}
 \usepackage{graphicx}
 \usepackage{multirow}
 \usepackage{natbib}
@@ -13,6 +12,7 @@
 \title{Proceedings of the OHBM Hackathon 2023}
 
 \include{authors}
+\include{affiliations}
 
 \begin{document}
 
@@ -43,7 +43,7 @@ Meanwhile, the Hack-Track provided an opportunity for participants to collaborat
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/demographics.png}
+    \includegraphics[width=0.99\textwidth]{images/demographics.png}
     \label{fig:demographics}
     \caption{
         The four panels illustrate key demographic and participation trends for the OHBM BrainHack 2023 participants.
@@ -98,7 +98,7 @@ This system has been instrumental in helping first-time attendees feel welcomed 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \includegraphics[width=0.99\textwidth]{images/buddy-system.png}
     \label{fig:buddy-system}
     \caption{
         (a) Front, and (b) back of a buddy card.
@@ -161,8 +161,8 @@ We will look further into our pipeline based on this result, so that we can have
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\textwidth]{images/clinica-1.png}
-    \label{fig:clinica-1}
+    \includegraphics[width=0.8\textwidth]{images/clinica.png}
+    \label{fig:clinica}
     \caption{
         Scatterplot of HD BET Dice probability and correlation ratio between reference and moving images. Red color means both metrics are below the threshold, blue or purple means one of the metrics is below the threshold, green means both metrics are above the threshold.
     }
@@ -252,7 +252,7 @@ Going forward, development of these toolboxes and revision of our community prac
 
 Openness and transparency have emerged as indispensable virtues that pave the way for high-quality, reproducible research, fostering a culture of trust and collaboration within the scientific community \cite{munafo2017manifesto}. In the domain of neuroimaging research, these principles have led to the creation of guidelines and best practices, establishing a platform that champions openness and reproducibility \cite{niso2022open}. The field has made substantial strides in embracing open science, a feat achieved through the successful integration of open-source software \cite{gorgolewski2011nipype}, public dataset sharing \cite{markiewicz2021openneuro}, standardized analysis pipelines \cite{nichols2017}, unified brain imaging data structures \cite{gorgolewski2016}, open code sharing \cite{smout2021open}, and the endorsement of open publishing.
 
-The joint efforts of these initiatives have established a robust foundation for cultivating a culture of collaboration and accountability within the neuroimaging community. Nonetheless, amidst these advancements, a crucial inquiry arises: What about the visual representations —the very tools through which we observe and make sense of neuroimaging results? It is within this context that we introduce Cerebro \cite{sina_mansour_l_2023_8238773}, a new Python-based software designed to create publication-quality brain visualizations (see Fig.x). Cerebro represents the next step in the quest for openness and reproducibility, where authors can share not only their code and data but also their publication figures alongside the precise scripts used to generate them. In doing so, Cerebro empowers researchers to make their visualizations fully reproducible, bridging the crucial gap between data, analysis, and representation.
+The joint efforts of these initiatives have established a robust foundation for cultivating a culture of collaboration and accountability within the neuroimaging community. Nonetheless, amidst these advancements, a crucial inquiry arises: What about the visual representations —the very tools through which we observe and make sense of neuroimaging results? It is within this context that we introduce Cerebro \cite{sina_mansour_l_2023_8238773}, a new Python-based software designed to create publication-quality brain visualizations (see Figure \ref{fig:cerebro}). Cerebro represents the next step in the quest for openness and reproducibility, where authors can share not only their code and data but also their publication figures alongside the precise scripts used to generate them. In doing so, Cerebro empowers researchers to make their visualizations fully reproducible, bridging the crucial gap between data, analysis, and representation.
 
 As Cerebro continues to evolve in its early development stages, this manuscript serves as a manifesto, articulating our dedication to advancing the cause of open and reproducible neuroimaging visualization. Cerebro is guided by a set of overarching goals, which include:
 
@@ -267,7 +267,7 @@ We wholeheartedly acknowledge that Cerebro cannot thrive in isolation. To realiz
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \includegraphics[width=0.8\textwidth]{images/cerebro.png}
     \label{fig:cerebro}
     \caption{
         Cerebro – A Python-Based 3D Brain Visualization Tool. (a) Cerebro leverages an extensive array of open-source Python tools, forming a robust foundation for its functionality. It also integrates with these tools to enable seamless Pythonic neuroimaging visualizations. (b) Cerebro prioritizes principles of scriptability, reproducibility, visualization quality, cross-compatibility, and integration in its pursuit of providing a reliable solution for the neuroimaging community. (c) An illustrative Cerebro-generated visualization, accompanied by a scannable QR code linked to the publicly accessible reproduction scripts.
@@ -302,7 +302,7 @@ Our future efforts will involve sophisticating the k-space simulations to genera
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.2\textwidth]{images/placeholder.png}
+    \includegraphics[width=0.9\textwidth]{images/k-particles.png}
     \label{fig:kparticles}
     \caption{
         Our compilation of k-space animations generated during the brainhack can be seen at \href{https://youtu.be/XS0LEQExGU8?si=I5Zufp3AcCbdhYIR}{YouTube}.
@@ -339,14 +339,23 @@ The pivotal strategy aims to demonstrate our commitment to the community and ens
 
 One of the most memorable and engaging events at the OHBM Brainhack 2023 was the 'Rhyming Battle.'
 Held before the project presentations, this unique event featured three participants who artistically expressed their experiences and challenges encountered during the hackathon.
-They crafted short poems about their projects and the various aspects they faced during Brainhack, bringing a touch of lighthearted humour to their scientific endeavours \textcolor{red}{(see Appendix)}.
+They crafted short poems about their projects and the various aspects they faced during Brainhack, bringing a touch of lighthearted humour to their scientific endeavours (see Appendix for lyrics).
 The Rhyming Battle provided an entertaining break from the Hackathon's more scientific aspects.
 It allowed attendees to resonate with each other's experiences, celebrating the struggles and triumphs inherent in scientific projects.
 The event showcased the creative and vibrant spirit of the Brainhack community.
 Voting for the winner was not straightforward, as the attendees were equally good.
-The prize was a single 3D homemade sculpture representing the Brainhack 2023 logo, made for the winner of the battle \textcolor{red}{(Figure x)}.
+The prize was a single 3D homemade sculpture representing the Brainhack 2023 logo, made for the winner of the battle (Figure \ref{fig:skull}).
 However, the enthusiasm of the battlers and the public was overwhelming, and we decided to 3D print the same sculpture for every battle participant.
 Ultimately, the spirit of Brainhack community prevailed \cite{gau2021brainhack,levitis2021centering}, and every participant was celebrated as a winner.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/skull.png}
+    \label{fig:skull}
+    \caption{
+        Skull sculpture generated using MidJourney's generative models for the main website and 3D printed replica for the Rhyming Battle winner. 
+    }
+\end{figure}
 
 \section{Conclusion}
 
