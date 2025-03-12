@@ -6,10 +6,15 @@
 \usepackage{natbib}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{hyperref}
+\usepackage{float}
+\usepackage[T1]{fontenc}
+
+\interlinepenalty=1000
 
 \newcommand\coordinator[1]{\begin{flushleft}\small\textit{#1}\end{flushleft}}
 
 \title{Proceedings of the OHBM Hackathon 2023}
+\date{}
 
 \include{authors}
 \include{affiliations}
@@ -17,6 +22,12 @@
 \begin{document}
 
 \maketitle
+
+\begin{abstract}
+    The OHBM Brainhack 2023 integrated educational innovation, creative expression, and scientific exploration to cultivate a dynamic and inclusive environment for learning and collaboration. The event featured two main components: the Train-Track, which provided structured and flexible hands-on training in a study group setting, and the Hack-Track, where participants engaged in open-source project development. To enhance engagement, the Buddy System facilitated peer support, ensuring newcomers felt welcomed within the Brainhack community. A novel addition to this year’s event was the Rhyming Battle, which encouraged participants to creatively express their experiences through scientific humor and artistic wordplay. Additionally, the introduction of the Mini-Grant Initiative aimed to recognize projects that prioritized open science, diversity, and interdisciplinary collaboration. While this initiative received mixed feedback due to its competitive nature, it provided valuable insights for future iterations. Here we reflect on the successes and lessons learned from Brainhack 2023, underscoring the collective impact of these initiatives.
+\end{abstract}
+
+\textbf{\textit{Keywords:}} Open Science, Brainhack, Hackathon, Neuroimaging, Neuroscience 
 
 \section{Introduction}
 
@@ -41,10 +52,9 @@ In addition to these new elements, the Train-Track and Hack-Track components rem
 The Train-Track offered structured tutorials and self-directed learning sessions on topics such as coding, machine learning, and reproducible research practices.
 Meanwhile, the Hack-Track provided an opportunity for participants to collaborate on open projects submitted by community members, with many focusing on developing open-source software tools and pipelines for neuroimaging analysis.
 
-\begin{figure}[h]
+\begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.99\textwidth]{images/demographics.png}
-    \label{fig:demographics}
     \caption{
         The four panels illustrate key demographic and participation trends for the OHBM BrainHack 2023 participants.
         \textbf{Panel A} shows the geographic distribution, with Canada, the United States, and France as the most represented countries among 13 in total.
@@ -52,7 +62,10 @@ Meanwhile, the Hack-Track provided an opportunity for participants to collaborat
         \textbf{Panel C} depicts participant satisfaction ratings for sessions such as Unconference, TrainTrack, and HackTrack, showing higher satisfaction for HackTrack sessions overall.
         \textbf{Panel D} examines format preferences (hybrid vs. onsite), with a stronger preference for hybrid participation among ECRs and attendees with more prior experience at BrainHack events, while onsite preference was higher among established faculty.
     }
+    \label{fig:demographics}
 \end{figure}
+
+\pagebreak
 
 \section{Train-Track}
 \coordinator{Andrea Gondová}
@@ -60,27 +73,26 @@ Meanwhile, the Hack-Track provided an opportunity for participants to collaborat
 The Train-Track was an educational component aiming to create a supportive environment for knowledge exchange, allowing participants toenhance their technical skills and knowledge through both structured and flexible learning sessions. Suggested training materials covered diverse range of topics, including coding skills, good coding and best research practices, and machine learning. These materials consisted of tutorials and/or pre-recorded videos, largely sourced from the BrainHack School (for more information, see Table \ref{tab:traintrack-material} for training materials and links). Additionally, participants were encouraged to customize their learning experience  by self-organizing  study group with others sharing similar learning goals. Onsite sign-ups were also avaliable for mentor-mentee pairings, offering antenddes opportunities to gain expertise in advanced topics while expanding their professional networking. Various communication platforms, including in-person sessions and Discord, were used to facilitate collaborative learning.
 
 Among the 31 respondents to the post-hackathon survey, 23\% participated in Train-Track sessions, with topics ranging from coding and machine learning to version control and coding best practices. “Good practices” was the most recommended topic by participants. However, feedback suggested a need for more structure and planning, such as scheduled sessions and topic prompts, to improve accessibility and participation. Organizers acknowledged the value of increased structure while maintaining Train-Track’s dynamic and community-driven nature. The goal remains to provide a flexible learning environment with suggested materials for inspiration, rather than prescriptive guidelines. To improve future iterations of Train-Track, organizers plan to introduce the program more clearly at the start of the event, encourage early interest in specific topics, and refine the program’s structure and objectives to better support participants.
-
-\begin{table}[]
-    \begin{tabular}{|l|l|c|}
+\begin{table}[H]
+    \begin{tabular}{@{}|l|l|@{}}
     \hline
-    \multicolumn{1}{|c|}{\textbf{Topic}}        & \multicolumn{1}{|c|}{\textbf{Session}}         & \multicolumn{1}{|c|}{\textbf{Link}}                                                                                                 \\ \hline
-    \textbf{Getting started}                    & Setting-up a hack friendly environment         & \href{https://psy6983.brainhackmtl.org/modules/installation/}{Link}                                                      \\ \hline
-                                                & Intro to jupyter notebooks                     & \href{https://docs.jupyter.org/en/latest/start/index.html}{Link}                                                         \\ \cline{2-3} 
-                                                & Intro to bash                                  & \href{https://psy6983.brainhackmtl.org/modules/introduction\_to\_terminal/}{Link}                                        \\ \cline{2-3} 
-                                                & Python: Data analysis                          & \href{https://psy6983.brainhackmtl.org/modules/python\_data\_analysis/}{Link}                                            \\ \cline{2-3} 
-                                                & Python: Visualisation                          & \href{https://psy6983.brainhackmtl.org/modules/python\_visualization/}{Link}                                             \\ \cline{2-3} 
-                                                & Python: Writing a script                       & \href{https://psy6983.brainhackmtl.org/modules/python\_scripts/}{Link}                                                   \\ \cline{2-3} 
-    \multirow{-6}{*}{\textbf{Coding skills}}    & Python: Packaging (pipy)                       & \href{https://psy6983.brainhackmtl.org/modules/packaging/}{Link}                                                         \\ \hline
-                                                & Using Git and Github                           & \href{https://youtu.be/zh\_WFv0uk7w}{Link} \href{https://psy6983.brainhackmtl.org/modules/git\_github/}{Link} \\ \cline{2-3} 
-                                                & Data management with Datalad                   & \href{https://psy6983.brainhackmtl.org/modules/datalad/}{Link} \href{https://youtu.be/QsAqnP7TwyY}{Link}      \\ \cline{2-3} 
-    \multirow{-5}{*}{\textbf{Version control}}  & Containers for science                         & \href{https://youtu.be/pc3YOZUG3lQ}{Link}                                                                                \\ \hline
-                                                & How to write good code                         & \href{https://youtu.be/gfPP2pQ8Rms}{Link}                                                                                \\ \cline{2-3} 
-                                                & Reproducible workflows: The Turing Way         & \href{https://youtu.be/tk2eZSrM8oA}{Link}                                                                                \\ \cline{2-3} 
-    \multirow{-3}{*}{\textbf{Good practices}}   & Reproducible workflows: Transparent MRI        & \href{https://youtu.be/dSOQgyuL51U}{Link}                                                                                \\ \hline
-                                                & Machine Learning basics                        & \href{https://psy6983.brainhackmtl.org/modules/machine\_learning\_basics/}{Link}                                         \\ \cline{2-3} 
-                                                & Machine Learning for neuroimaging              & \href{https://psy6983.brainhackmtl.org/modules/machine\_learning\_neuroimaging/}{Link}                                   \\ \cline{2-3} 
-    \multirow{-3}{*}{\textbf{Machine learning}} & Machine Learning Reproducibility Checklist     & \href{https://www.cs.mcgill.ca/$\sim$jpineau/ReproducibilityChecklist.pdf}{Link}                                         \\ \hline
+    \multicolumn{1}{|c|}{\textbf{Topic}} & \multicolumn{1}{c|}{\textbf{Session}}                                                                                                                                                           \\ \hline
+    \textbf{Getting started}             & \begin{tabular}[c]{@{}l@{}}Setting-up a hack friendly environment     \\ \texttt{https://psy6983.brainhackmtl.org/modules/installation/}                                          \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Intro to jupyter notebooks                 \\ \texttt{https://docs.jupyter.org/en/latest/start/index.html}                                             \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Intro to bash                              \\ \texttt{https://psy6983.brainhackmtl.org/modules/introduction\_to\_terminal/}                            \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Python: Data analysis                      \\ \texttt{https://psy6983.brainhackmtl.org/modules/python\_data\_analysis/}                                \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Python: Visualisation                      \\ \texttt{https://psy6983.brainhackmtl.org/modules/python\_visualization/}                                 \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Python: Writing a script                   \\ \texttt{https://psy6983.brainhackmtl.org/modules/python\_scripts/}                                       \end{tabular} \\ \hline
+     \textbf{Coding skills}              & \begin{tabular}[c]{@{}l@{}}Python: Packaging (pipy)                   \\ \texttt{https://psy6983.brainhackmtl.org/modules/packaging/}                                             \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Using Git and Github                       \\ \texttt{https://youtu.be/zh\_WFv0uk7w} \\ \texttt{https://psy6983.brainhackmtl.org/modules/git\_github/} \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Data management with Datalad               \\ \texttt{https://psy6983.brainhackmtl.org/modules/datalad/} \\ \texttt{https://youtu.be/QsAqnP7TwyY}      \end{tabular} \\ \hline
+    \textbf{Version control}             & \begin{tabular}[c]{@{}l@{}}Containers for science                     \\ \texttt{https://youtu.be/pc3YOZUG3lQ}                                                                    \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}How to write good code                     \\ \texttt{https://youtu.be/gfPP2pQ8Rms}                                                                    \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Reproducible workflows: The Turing Way     \\ \texttt{https://youtu.be/tk2eZSrM8oA}                                                                    \end{tabular} \\ \hline
+    \textbf{Good practices}              & \begin{tabular}[c]{@{}l@{}}Reproducible workflows: Transparent MRI    \\ \texttt{https://youtu.be/dSOQgyuL51U}                                                                    \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Machine Learning basics                    \\ \texttt{https://psy6983.brainhackmtl.org/modules/machine\_learning\_basics/}                             \end{tabular} \\ \cline{2-2}
+                                         & \begin{tabular}[c]{@{}l@{}}Machine Learning for neuroimaging          \\ \texttt{https://psy6983.brainhackmtl.org/modules/machine\_learning\_neuroimaging/}                       \end{tabular} \\ \hline
+    \textbf{Machine learning}            & \begin{tabular}[c]{@{}l@{}}Machine Learning Reproducibility Checklist \\ \texttt{https://www.cs.mcgill.ca/$\sim$jpineau/ReproducibilityChecklist.pdf}                             \end{tabular} \\ \hline
     \end{tabular}
     \caption{Training materials provided for the Train-Track sessions at OHBM BrainHack 2023, including tutorials, pre-recorded videos, and resource links for coding, machine learning, and best practices.}
     \label{tab:traintrack-material}
@@ -92,11 +104,8 @@ Among the 31 respondents to the post-hackathon survey, 23\% participated in Trai
 The Buddy System was established to support and engage newcomers at the Hackathon.
 This initiative pairs participants in a mentor-mentee fashion, with mentors guiding interests, projects to join, and networking opportunities throughout the Hackathon.
 Introduced in the previous 2022 edition, the system was refined for 2023 to create a more dynamic and natural community structure (see Figure \ref{fig:buddy-system}).
-Pairs were given the freedom to choose their buddies to avoid any biases in matching, ensuring a fair and supportive environment for all participants.
-In doing so, first-time attendees and more experienced brainhackers were encouraged to network and get to know each other while also sharing information about what to expect from the brainhack.
-This system has been instrumental in helping first-time attendees feel welcomed and integrated into the community.
 
-\begin{figure}[h]
+\begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.99\textwidth]{images/buddy-system.png}
     \label{fig:buddy-system}
@@ -107,6 +116,11 @@ This system has been instrumental in helping first-time attendees feel welcomed 
         The cards acted as catalist to start a conversation and exchange thoughts, experiences, and contact information.
     }
 \end{figure}
+
+Pairs were given the freedom to choose their buddies to avoid any biases in matching, ensuring a fair and supportive environment for all participants.
+In doing so, first-time attendees and more experienced brainhackers were encouraged to network and get to know each other while also sharing information about what to expect from the brainhack.
+This system has been instrumental in helping first-time attendees feel welcomed and integrated into the community.
+
 
 \section{Hack-Track}
 \coordinator{Qing (Vincent) Wang}
@@ -159,7 +173,7 @@ We were able to output seven available QC metrics for registration, and with PCA
 
 We will look further into our pipeline based on this result, so that we can have a better idea of what we want to implement in the future version of Clinica, which will include QC.
 
-\begin{figure}[h]
+\begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/clinica.png}
     \label{fig:clinica}
@@ -188,7 +202,7 @@ The improvements made to NiMARE and related tools provide more accessibility to 
 \textbf{Authors}: Boris Clénet, Élodie Germani, Arshitha Basavaraj, Remi Gau, Yaroslav Halchenko, Paul Taylor, Camille Maumet
 
 Different analytical choices can lead to variations in the results, a phenomenon that was illustrated in neuroimaging by the NARPS project \cite{botvinik2020}. In NARPS, 70 teams were tasked to analyze the same dataset to answer nine yes/no research questions. Each team shared their final results and a COBIDAS-compliant \cite{nichols2017} textual description of their analysis. The goal of NARPS Open Pipelines is to create a codebase reproducing the 70 pipelines of the NARPS project and share this as an open resource for the community.
-Results 
+Results
 During the OHBM Brainhack 2023, participants had the opportunity to improve the project in various ways. First, they focused on fostering a more inclusive environment for new contributors, refining the contribution process through proofreading and testing. Several pull requests (
 \href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/66}{PR \#66},
 \href{https://github.com/Inria-Empenn/narps_open_pipelines/pull/65}{PR \#65},
@@ -265,7 +279,7 @@ The diversity of brain imaging data formats can pose a significant challenge for
 \textbf{Integration with Open Science Neuroimaging Tools}:
 We wholeheartedly acknowledge that Cerebro cannot thrive in isolation. To realize its full potential, it must seamlessly integrate into the existing tapestry of open science tools, software, and standards. Through active collaboration with the neuroimaging community, particularly through open, inclusive community initiatives such as brainhacks \cite{gau2021brainhack}, Cerebro aspires to forge cross-compatibility with established and emerging tools, standards, and pipelines. Our vision is one where the future of neuroimaging visualizations is marked by unwavering openness and reproducibility, fostered by this united effort.
 
-\begin{figure}[h]
+\begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.8\textwidth]{images/cerebro.png}
     \label{fig:cerebro}
@@ -281,7 +295,7 @@ We wholeheartedly acknowledge that Cerebro cannot thrive in isolation. To realiz
 
 The primary objective of this project is to leverage particle animations to provide insights into the journey of traveling and sampling the k-space. By generating captivating visualizations, we aim to demystify the concept of k-space and the role it plays in magnetic resonance imaging (MRI), engaging both the scientific community and the general public in a delightful exploration of this fundamental aspect of imaging. This project builds on our previous Brainhack experiences that focused on generating 3D geodesic distance computation animations \cite{Brainhack2021} and particle simulation based brain explosions \cite{Moia2024}.
 
-Our methodology is as follows. First, we start from a 2D brain image (e.g. selecting a slice from a 3D anatomical MRI data 
+Our methodology is as follows. First, we start from a 2D brain image (e.g. selecting a slice from a 3D anatomical MRI data
 \cite{Brett2023-ia,Numpy,Scipy}. Then, we take its Fourier Transform and subsequently perform masking (or magnitude scaling) operations on k-space data \cite{Bernstein2004}, the transform. We then create simultaneous visualizations of the k-space magnitude and corresponding image-space magnitude data. Note that the masking of k-space data is where the participants of this project exercised their creativity, by setting up various initial conditions and a set of rules to animate the mask data. In the final step, animated frames are compiled into movies to inform (and entertain). The scripts we have used to program these steps are available in \href{https://github.com/ofgulban/k_particles}{GitHub}. Note that, we have also included several animations where no brain images were used, but instead, we generated k-space data directly in k-space to guide the unfamiliar participants with the concepts (see Figure \ref{fig:kparticles}, panel A).
 
 As a result of this hackathon project, a compilation of our progress (see Figure \ref{fig:kparticles}, panel B) can be seen at \href{https://youtu.be/_5ZDctWv5X4}{YouTube} as a video. Some of the highlights are:
@@ -300,7 +314,7 @@ As a result of this hackathon project, a compilation of our progress (see Figure
 
 Our future efforts will involve sophisticating the k-space simulations to generate more entertaining and educational content. For instance, instead of only visualizing the magnitude images, we can generate four panel animations showing real and imaginary (or magnitude and phase) components of the data.
 
-\begin{figure}[h]
+\begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.9\textwidth]{images/k-particles.png}
     \label{fig:kparticles}
@@ -348,12 +362,12 @@ The prize was a single 3D homemade sculpture representing the Brainhack 2023 log
 However, the enthusiasm of the battlers and the public was overwhelming, and we decided to 3D print the same sculpture for every battle participant.
 Ultimately, the spirit of Brainhack community prevailed \cite{gau2021brainhack,levitis2021centering}, and every participant was celebrated as a winner.
 
-\begin{figure}[h]
+\begin{figure}[hbt!]
     \centering
     \includegraphics[width=0.9\textwidth]{images/skull.png}
     \label{fig:skull}
     \caption{
-        Skull sculpture generated using MidJourney's generative models for the main website and 3D printed replica for the Rhyming Battle winner. 
+        Skull sculpture generated using MidJourney's generative models for the main website and 3D printed replica for the Rhyming Battle winner.
     }
 \end{figure}
 
