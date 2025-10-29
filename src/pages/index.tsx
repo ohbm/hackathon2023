@@ -50,7 +50,7 @@ export default function Home() {
           relative max-w-6xl text-center
           grid grid-cols-1 md:grid-cols-2 flex-grow
         `}>
-          <div className="md:absolute top-0 p-2 bg-jungle text-white text-left text-sm">
+          {/*<div className="md:absolute top-0 p-2 bg-jungle text-white text-left text-sm">
             <p className="font-bold m-0">COVID-19 notice</p>
             <p className="m-0">
               The Hackathon&apos;s policy aligns with local guidelines.
@@ -58,7 +58,7 @@ export default function Home() {
               If local guidelines change, the Hackathon will adapt its policy accordingly.
               Masks will be available for attendees.
             </p>
-          </div>
+          </div>*/}
           <div className="flex flex-col items-center justify-center">
             <div className="flex flex-row md:flex-col items-center justify-center">
               <h2 className={`${bebas.className} mb-3 font-semibold  md:text-6xl mr-10 md:mr-0`}>
